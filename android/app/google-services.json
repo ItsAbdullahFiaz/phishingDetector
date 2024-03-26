@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1097549794392",
+    "project_id": "phishing-detector-b51d7",
+    "storage_bucket": "phishing-detector-b51d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097549794392:android:42df051120c1cb00564e2d",
+        "android_client_info": {
+          "package_name": "com.phishingdetector"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlYi6g0NycXfmNxA7UpYiGuRSN1beVIIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
