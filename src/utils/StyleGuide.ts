@@ -3,20 +3,20 @@ import useResponsiveDimensions from './useResponsiveDimensions';
 
 // const { wp, hp } = useResponsiveDimensions();
 // const primaryColor = '#232D3F'
-const primaryColor = '#005B41'
-const secondryColor = '#d9dfea'
+const primaryColor = '#1b2c3d'
+const secondryColor = '#dde6f0'
 const primaryDim = '#e4fff7'
-const secondryDim = '#b3bfd5'
+const secondryDim = '#8baccc'
 const primaryLight = '#F6F9FB'
 const headingColor = "#000000";
 const textColorDim = "#BBBBBB"
 const transparent = "#00000000"
 const white = "#FFFFFF"
 const BackGroundColor = "#FCFCFC"
-const normalFont = "Mullish-Regular"
-const mediumFont = "Mullish-Medium"
-const boldFont = "Mullish-Bold"
-const mediumFont2 = "GothicA1-Medium"
+const normalFont = "Poppins"
+const mediumFont = "Poppins-Medium"
+const boldFont = "Poppins-Bold"
+const mediumFont2 = "Poppins-Medium"
 
 const textFont = { fontFamily: normalFont }
 const mediumTextFont = { fontFamily: mediumFont }
@@ -41,25 +41,25 @@ const Colors = {
 }
 
 const headings = StyleSheet.create({
-    h1: { fontFamily: 'GothicA1-Medium', color: headingColor },
-    h1b: { fontFamily: 'GothicA1-Bold', color: headingColor },
-    h2: { fontFamily: 'GothicA1-Medium', color: headingColor },
-    h2b: { fontFamily: 'GothicA1-Bold', color: headingColor, fontSize: 16 },
-    h2M: { fontFamily: 'Mulish-Medium', color: headingColor, fontSize: 16 },
-    h2Mb: { fontFamily: 'Mulish-Bold', color: headingColor, fontSize: 16 },
-    h3: { fontFamily: 'Mulish-Medium', color: headingColor },
-    h3drawer: { fontFamily: 'Mulish-Bold', fontSize: 14 },
-    h3b: { fontFamily: 'Mulish-Bold', color: headingColor, fontSize: 14 },
-    h4: { fontFamily: 'GothicA1-Medium', color: textColorDim },
-    h4b: { fontFamily: 'GothicA1-Bold', color: textColorDim, fontSize: 12 },
-    h5: { fontFamily: 'Mulish-Medium', color: textColorDim},
-    h5b: { fontFamily: 'Mulish-Bold', color: textColorDim, fontSize: 11 },
+    h1: { fontFamily: 'Poppins-Medium', color: headingColor },
+    h1b: { fontFamily: 'Poppins-Bold', color: headingColor },
+    h2: { fontFamily: 'Poppins-Medium', color: headingColor },
+    h2b: { fontFamily: 'Poppins-Bold', color: headingColor, fontSize: 16 },
+    h2M: { fontFamily: 'Poppins-Medium', color: headingColor, fontSize: 16 },
+    h2Mb: { fontFamily: 'Poppins-Bold', color: headingColor, fontSize: 16 },
+    h3: { fontFamily: 'Poppins-Medium', color: headingColor },
+    h3drawer: { fontFamily: 'Poppins-Bold', fontSize: 14 },
+    h3b: { fontFamily: 'Poppins-Bold', color: headingColor, fontSize: 14 },
+    h4: { fontFamily: 'Poppins-Medium', color: textColorDim },
+    h4b: { fontFamily: 'Poppins-Bold', color: textColorDim, fontSize: 12 },
+    h5: { fontFamily: 'Poppins-Medium', color: textColorDim},
+    h5b: { fontFamily: 'Poppins-Bold', color: textColorDim, fontSize: 11 },
     h6: { ...textFont, fontSize: 14, color: Colors.darkblue },
     h6b: { ...textFont, fontSize: 14, color: textColorDim, },
-    h7: { fontFamily: 'GothicA1-Medium', color: textColorDim },
-    h7b: { fontFamily: 'GothicA1-Bold', fontSize: 12, color: headingColor, },
-    h8: { fontFamily: 'Mulish-Medium', fontSize: 11, color: headingColor, lineHeight: 14 },
-    h9: { fontFamily: 'Mulish-Medium', fontSize: 10, color: headingColor, lineHeight: 14 },
+    h7: { fontFamily: 'Poppins-Medium', color: textColorDim },
+    h7b: { fontFamily: 'Poppins-Bold', fontSize: 12, color: headingColor, },
+    h8: { fontFamily: 'Poppins-Medium', fontSize: 11, color: headingColor, lineHeight: 14 },
+    h9: { fontFamily: 'Poppins-Medium', fontSize: 10, color: headingColor, lineHeight: 14 },
 
 })
 const ActiveOpacity = 0.8

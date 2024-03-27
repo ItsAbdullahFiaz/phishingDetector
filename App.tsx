@@ -1,8 +1,9 @@
-import { SafeAreaView, StyleSheet } from 'react-native'
+import { SafeAreaView, StatusBar, StyleSheet } from 'react-native'
 import React from 'react'
-import { AuthStack } from './src/navigation/Navigation'
+import { MainStack } from './src/navigation/Navigation'
 import Toast from 'react-native-toast-message'
 import LeaderboardToast from './src/components/LeaderboardToast';
+import { secondryColor } from './src/utils/StyleGuide';
 
 export default function App() {
   const toastConfig = {
@@ -20,7 +21,8 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <AuthStack />
+      <StatusBar barStyle='dark-content' backgroundColor={secondryColor} />
+      <MainStack />
       <Toast config={toastConfig} />
     </SafeAreaView>
   )
