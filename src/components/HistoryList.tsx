@@ -36,7 +36,7 @@ export default function HistoryList({ storedUrls, setStoredUrls }: any) {
     const styles = useMemo(() => {
         return {
             historyContainer: {
-                flex: 0.7,
+                flex: 1,
                 marginTop: hp(50),
                 backgroundColor: storedUrls != '' ? primaryLight : secondryColor,
                 borderRadius: 8,

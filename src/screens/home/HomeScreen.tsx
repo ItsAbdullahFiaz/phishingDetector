@@ -7,6 +7,7 @@ import MainButton from '../../components/MainButton';
 import MainHeading from '../../components/MainHeading';
 import MainContainer from '../../components/MainContainer';
 import AppIcon from '../../components/AppIcon';
+import BannerAds from '../../components/BannerAds';
 
 const App = () => {
     const [url, setUrl] = useState('');
@@ -75,6 +76,7 @@ const App = () => {
                 isLoading={loading}
             />
             <HistoryList storedUrls={storedUrls} setStoredUrls={setStoredUrls} />
+            <BannerAds />
         </MainContainer>
     );
 };
