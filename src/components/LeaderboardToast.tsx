@@ -19,7 +19,7 @@ const LeaderboardToast = ({ text1, text2, type }: { text1: string, text2: string
             toast_text: {
                 fontSize: hp(14),
                 color: Colors.white,
-                fontFamily: "PoppinsMedium",
+                fontFamily: "Poppins-Medium",
                 paddingLeft: hp(16),
             },
             toast_textTwo: {
