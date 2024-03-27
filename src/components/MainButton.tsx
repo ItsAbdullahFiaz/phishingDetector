@@ -5,7 +5,7 @@ import useResponsiveDimensions from '../utils/useResponsiveDimensions';
 import { DotIndicator } from 'react-native-indicators'
 
 type MainButtonProps = {
-    onPress: () => void;
+    onPress: () => Promise<void>;
     buttonText: string;
     disableBtn: boolean;
     isLoading: boolean;
