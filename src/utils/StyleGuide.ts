@@ -3,10 +3,10 @@ import useResponsiveDimensions from './useResponsiveDimensions';
 
 // const { wp, hp } = useResponsiveDimensions();
 // const primaryColor = '#232D3F'
-const primaryColor = '#005B41'
-const secondryColor = '#d9dfea'
+const primaryColor = '#1b2c3d'
+const secondryColor = '#dde6f0'
 const primaryDim = '#e4fff7'
-const secondryDim = '#b3bfd5'
+const secondryDim = '#8baccc'
 const primaryLight = '#F6F9FB'
 const headingColor = "#000000";
 const textColorDim = "#BBBBBB"
