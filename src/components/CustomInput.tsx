@@ -26,7 +26,7 @@ const CustomInput = ({ value, setValue, placeholder, secureTextEntry, textWrong,
             input: {
                 color: Colors.black,
                 fontSize: hp(14),
-                height: hp(44),
+                height: hp(46),
                 width: '100%' as ViewStyle['width'],
                 paddingLeft: hp(16),
                 marginTop: hp(4),
