@@ -7,6 +7,10 @@ import MainButton from '../../components/MainButton';
 import MainHeading from '../../components/MainHeading';
 import MainContainer from '../../components/MainContainer';
 import AppIcon from '../../components/AppIcon';
+import BannerAds from '../../components/BannerAds';
+import { useInterstitialAds } from '../../hooks/useInterstitialAd';
+import validator from 'validator';
+import { useToast } from '../../hooks/useToast';
 
 const App = () => {
     const [url, setUrl] = useState('');
@@ -14,6 +18,8 @@ const App = () => {
     const [loading, setLoading] = useState(false);
     const [storedUrls, setStoredUrls] = useState<{ url: string, status: boolean }[]>([]);
     const [storeSwitch, setStoreSwitch] = useState(false)
+    const { showInterstitialAd, adEnded, reloadInterstitialAd } = useInterstitialAds();
+    const showToast = useToast();
 
     useEffect(() => {
         loadStoredUrls();
@@ -24,6 +30,13 @@ const App = () => {
             storeUrlStatus();
         }
     }, [storeSwitch]);
+
+    useEffect(() => {
+        if (adEnded) {
+            handlePredict()
+            reloadInterstitialAd()
+        }
+    }, [adEnded]);
 
     const loadStoredUrls = async () => {
         try {
@@ -56,6 +69,16 @@ const App = () => {
         }
     };
 
+    const handleOnPress = () => {
+        const isValid = validator.isURL(url);
+
+        if (!isValid) {
+            showToast('Invalid URL', 'errorToast', url)
+        } else {
+            showInterstitialAd()
+        }
+    }
+
     return (
         <MainContainer>
             <AppIcon />
@@ -69,12 +92,13 @@ const App = () => {
                 bottomError={false}
             />
             <MainButton
-                onPress={handlePredict}
+                onPress={handleOnPress}
                 buttonText='Predict'
                 disableBtn={url.length < 4}
                 isLoading={loading}
             />
             <HistoryList storedUrls={storedUrls} setStoredUrls={setStoredUrls} />
+            <BannerAds />
         </MainContainer>
     );
 };

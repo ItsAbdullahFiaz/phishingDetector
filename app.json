@@ -1,4 +1,7 @@
 {
   "name": "PhishingDetector",
-  "displayName": "PhishingDetector"
+  "displayName": "PhishingDetector",
+    "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-2994186406049200~6090867601"
+  }
 }
