@@ -14,13 +14,13 @@ export default function MainHeading({ heading }: { heading: string }) {
             },
             heading: {
                 color: primaryColor,
-                fontSize: hp(20)
+                fontSize: hp(22)
             }
         };
     }, [hp, wp]);
     return (
         <View style={styles.headingContainer}>
-            <Text style={[headings.h1b, styles.heading]}>{heading}</Text>
+            <Text style={[headings.h1, styles.heading]}>{heading}</Text>
         </View>
     )
 }

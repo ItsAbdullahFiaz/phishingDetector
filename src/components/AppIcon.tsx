@@ -10,7 +10,7 @@ export default function AppIcon() {
     const styles = useMemo(() => {
         return {
             imageContainer: {
-                marginBottom: hp(16),
+                marginBottom: hp(2),
             },
         };
     }, [hp, wp]);
