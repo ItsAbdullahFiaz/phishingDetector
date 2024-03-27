@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { predictUrl } from '../../services/Predict';
-import auth from '@react-native-firebase/auth';
-import { resetAndGo } from '../../utils/Helpers';
-import { useNavigation } from '@react-navigation/native';
 import HistoryList from '../../components/HistoryList';
 import CustomInput from '../../components/CustomInput';
 import MainButton from '../../components/MainButton';
 import MainHeading from '../../components/MainHeading';
 import MainContainer from '../../components/MainContainer';
-import IconButton from '../../components/IconButton';
 import AppIcon from '../../components/AppIcon';
 
 const App = () => {
@@ -18,8 +14,6 @@ const App = () => {
     const [loading, setLoading] = useState(false);
     const [storedUrls, setStoredUrls] = useState<{ url: string, status: boolean }[]>([]);
     const [storeSwitch, setStoreSwitch] = useState(false)
-
-    const navigation = useNavigation()
 
     useEffect(() => {
         loadStoredUrls();
@@ -62,25 +56,10 @@ const App = () => {
         }
     };
 
-    const handleLogout = async () => {
-        try {
-            await auth().signOut();
-            await AsyncStorage.removeItem('urlHistory');
-            resetAndGo(navigation, 'LoginScreen', null)
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
     return (
         <MainContainer>
-            <IconButton onPress={handleLogout} icon='sign-out' />
             <AppIcon />
             <MainHeading heading='Phishing Detector' />
-            {/* <Text style={[headings.h8, { color: 'red', textAlign: 'center', marginBottom: 8 }]}>
-                This application was developed by abdCodes for a client who has not yet paid for the service.
-                Any unauthorized use or replication of this application is strictly prohibited.
-            </Text> */}
             <CustomInput
                 value={url}
                 setValue={setUrl}

@@ -1,6 +1,6 @@
 import { SafeAreaView, StyleSheet } from 'react-native'
 import React from 'react'
-import { AuthStack } from './src/navigation/Navigation'
+import { MainStack } from './src/navigation/Navigation'
 import Toast from 'react-native-toast-message'
 import LeaderboardToast from './src/components/LeaderboardToast';
 
@@ -20,7 +20,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <AuthStack />
+      <MainStack />
       <Toast config={toastConfig} />
     </SafeAreaView>
   )

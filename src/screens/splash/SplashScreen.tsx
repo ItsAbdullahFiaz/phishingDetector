@@ -1,6 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React, { useEffect } from 'react'
-import auth from '@react-native-firebase/auth';
 import { resetAndGo } from '../../utils/Helpers';
 import { useNavigation } from '@react-navigation/native';
 import AppIcon from '../../components/AppIcon';
@@ -11,19 +9,10 @@ export default function SplashScreen() {
 
     const navigation = useNavigation()
 
-    function onAuthStateChanged(user: any) {
-        setTimeout(() => {
-            if (user) {
-                resetAndGo(navigation, 'MainStack', null)
-            } else {
-                resetAndGo(navigation, 'LoginScreen', null)
-            }
-        }, 2000);
-    }
-
     useEffect(() => {
-        const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
-        return subscriber; // unsubscribe on unmount
+        setTimeout(() => {
+            resetAndGo(navigation, 'HomeScreen', null)
+        }, 2000);
     }, []);
 
     return (
@@ -33,5 +22,3 @@ export default function SplashScreen() {
         </MainContainer>
     )
 }
-
-const styles = StyleSheet.create({})
