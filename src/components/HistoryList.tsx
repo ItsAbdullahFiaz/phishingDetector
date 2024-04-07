@@ -28,8 +28,8 @@ export default function HistoryList({ storedUrls, setStoredUrls }: any) {
 
     const emptyComponent = () => (
         <View style={styles.emptyContainer}>
-            <Icon name='history' size={40} color={primaryColor} />
-            <Text style={[headings.h2, styles.emptyText]}>No history available</Text>
+            <Icon style={styles.emptyIcon} name='history' size={40} color={primaryColor} />
+            <Text style={[headings.h4, styles.emptyText]}>No history available</Text>
         </View>
     )
 
@@ -38,7 +38,7 @@ export default function HistoryList({ storedUrls, setStoredUrls }: any) {
             historyContainer: {
                 flex: 1,
                 marginTop: hp(50),
-                backgroundColor: storedUrls != '' ? primaryLight : secondryColor,
+                backgroundColor: primaryLight,
                 borderRadius: 8,
                 borderWidth: 1,
                 borderColor: Colors.transparent,
@@ -60,6 +60,9 @@ export default function HistoryList({ storedUrls, setStoredUrls }: any) {
             },
             emptyContainer: {
                 alignItems: 'center' as ViewStyle['alignItems'],
+            },
+            emptyIcon: {
+                marginTop: hp(50)
             },
             emptyText: {
                 fontSize: hp(16),

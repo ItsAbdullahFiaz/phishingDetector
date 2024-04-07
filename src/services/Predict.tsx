@@ -5,13 +5,6 @@ export const predictUrl = async (url: string, setLoading: Function, setPredictio
     const showToast = useToast();
 
     try {
-        const isValid = validator.isURL(url);
-
-        if (!isValid) {
-            showToast('Invalid URL', 'errorToast', url)
-            return;
-        }
-
         setLoading(true);
 
         const response = await fetch('http://abdullahfiaz.pythonanywhere.com/predict', {
