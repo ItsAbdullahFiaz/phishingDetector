@@ -11,7 +11,7 @@ export default function BannerAds() {
     const styles = useMemo(() => {
         return {
             adContainer: {
-                marginVertical: hp(20)
+                marginVertical: hp(8)
             },
         };
     }, [hp, wp]);

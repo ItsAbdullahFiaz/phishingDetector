@@ -37,7 +37,7 @@ export default function HistoryList({ storedUrls, setStoredUrls }: any) {
         return {
             historyContainer: {
                 flex: 1,
-                marginTop: hp(50),
+                marginTop: hp(26),
                 backgroundColor: primaryLight,
                 borderRadius: 8,
                 borderWidth: 1,
