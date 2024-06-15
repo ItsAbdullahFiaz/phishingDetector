@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import NetInfo from "@react-native-community/netinfo";
 
-const useNetworkStatus = () => {
+export const useNetworkStatus = () => {
   const [isInternetConnected, setIsInternetConnected] = useState(null);
 
   useEffect(() => {
@@ -18,5 +18,3 @@ const useNetworkStatus = () => {
 
   return isInternetConnected;
 };
-
-export default useNetworkStatus;

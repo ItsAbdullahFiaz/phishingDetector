@@ -1,10 +1,19 @@
 import { View, Text, StyleSheet } from "react-native";
-import React, { useMemo } from "react";
-import useResponsiveDimensions from "../utils/useResponsiveDimensions";
-import { Colors } from "../utils/StyleGuide";
+import React, { useContext, useMemo } from "react";
+import { useResponsiveDimensions } from "../hooks";
+import { OTHER_COLORS } from "../enums";
+import { AppDataContext } from "../context";
 
-const LeaderboardToast = ({ text1, text2, type }: { text1: string, text2: string, type: string }) => {
+interface LeaderboardToastProps {
+    text1: string,
+    text2: string,
+    type: string
+}
+
+export const LeaderboardToast = (props: LeaderboardToastProps) => {
+    const { text1, text2, type } = props
     const { hp, wp } = useResponsiveDimensions();
+    const { appLang, appTheme } = useContext(AppDataContext);
 
     const styles = useMemo(() => {
         return StyleSheet.create({
@@ -18,13 +27,13 @@ const LeaderboardToast = ({ text1, text2, type }: { text1: string, text2: string
             },
             toast_text: {
                 fontSize: hp(14),
-                color: Colors.white,
+                color: appTheme.secondary,
                 fontFamily: "Poppins-Medium",
                 paddingLeft: hp(16),
             },
             toast_textTwo: {
                 fontSize: hp(13),
-                color: Colors.white,
+                color: appTheme.secondary,
                 fontFamily: "Poppins",
                 paddingLeft: hp(16),
                 paddingTop: hp(9),
@@ -32,7 +41,7 @@ const LeaderboardToast = ({ text1, text2, type }: { text1: string, text2: string
         });
     }, [wp, hp]);
 
-    const boxColor = type == "successLeaderboard" ? Colors.green : Colors.red;
+    const boxColor = type == "successLeaderboard" ? OTHER_COLORS.green : OTHER_COLORS.red;
     const isSuccess = type == "successLeaderboard";
     return (
         <View style={[styles.box_style, { backgroundColor: boxColor }]}>
@@ -44,5 +53,3 @@ const LeaderboardToast = ({ text1, text2, type }: { text1: string, text2: string
         </View>
     );
 };
-
-export default LeaderboardToast;

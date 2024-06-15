@@ -4,9 +4,9 @@ PODS:
   - FBLazyVector (0.74.2)
   - fmt (9.1.0)
   - glog (0.3.5)
-  - Google-Mobile-Ads-SDK (11.2.0):
+  - Google-Mobile-Ads-SDK (11.5.0):
     - GoogleUserMessagingPlatform (>= 1.1)
-  - GoogleUserMessagingPlatform (2.3.0)
+  - GoogleUserMessagingPlatform (2.4.0)
   - hermes-engine (0.74.2):
     - hermes-engine/Pre-built (= 0.74.2)
   - hermes-engine/Pre-built (0.74.2)
@@ -938,7 +938,7 @@ PODS:
   - React-Mapbuffer (0.74.2):
     - glog
     - React-debug
-  - react-native-netinfo (11.3.1):
+  - react-native-netinfo (11.3.2):
     - React-Core
   - react-native-safe-area-context (4.10.4):
     - React-Core
@@ -1171,32 +1171,9 @@ PODS:
     - React-logger (= 0.74.2)
     - React-perflogger (= 0.74.2)
     - React-utils (= 0.74.2)
-  - RNCAsyncStorage (1.22.3):
+  - RNCAsyncStorage (1.23.1):
     - React-Core
-  - RNGoogleMobileAds (13.1.0):
-    - DoubleConversion
-    - glog
-    - Google-Mobile-Ads-SDK (= 11.2.0)
-    - GoogleUserMessagingPlatform (= 2.3.0)
-    - hermes-engine
-    - RCT-Folly (= 2024.01.01.00)
-    - RCTRequired
-    - RCTTypeSafety
-    - React-Codegen
-    - React-Core
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-ImageManager
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-rendererdebug
-    - React-utils
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
-    - Yoga
-  - RNScreens (3.29.0):
+  - RNGestureHandler (2.16.2):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1217,7 +1194,73 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNVectorIcons (10.0.3):
+  - RNGoogleMobileAds (13.6.0):
+    - DoubleConversion
+    - glog
+    - Google-Mobile-Ads-SDK (= 11.5.0)
+    - GoogleUserMessagingPlatform (= 2.4.0)
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Codegen
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
+  - RNReanimated (3.12.0):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Codegen
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
+  - RNScreens (3.31.1):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Codegen
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-RCTImage
+    - React-rendererdebug
+    - React-utils
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
+  - RNVectorIcons (10.1.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1300,7 +1343,9 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
+  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNGoogleMobileAds (from `../node_modules/react-native-google-mobile-ads`)
+  - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -1425,8 +1470,12 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
+  RNGestureHandler:
+    :path: "../node_modules/react-native-gesture-handler"
   RNGoogleMobileAds:
     :path: "../node_modules/react-native-google-mobile-ads"
+  RNReanimated:
+    :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
   RNVectorIcons:
@@ -1440,8 +1489,8 @@ SPEC CHECKSUMS:
   FBLazyVector: 4bc164e5b5e6cfc288d2b5ff28643ea15fa1a589
   fmt: 4c2741a687cc09f0634a2e2c72a838b99f1ff120
   glog: fdfdfe5479092de0c4bdbebedd9056951f092c4f
-  Google-Mobile-Ads-SDK: 5a6d005a6cb5b5e8f4c7b69ca05cdea79c181139
-  GoogleUserMessagingPlatform: b1ad7bb1ee3ce64749d4fec24f667b36e45c396c
+  Google-Mobile-Ads-SDK: 7db2098033ad3bfcd72a11e7503b49700a93029e
+  GoogleUserMessagingPlatform: f131fa7978d2ba88d7426702b057c2cc318e6595
   hermes-engine: 01d3e052018c2a13937aca1860fbedbccd4a41b7
   RCT-Folly: 02617c592a293bd6d418e0a88ff4ee1f88329b47
   RCTDeprecation: b03c35057846b685b3ccadc9bfe43e349989cdb2
@@ -1467,7 +1516,7 @@ SPEC CHECKSUMS:
   React-jsitracing: 0fa7f78d8fdda794667cb2e6f19c874c1cf31d7e
   React-logger: 29fa3e048f5f67fe396bc08af7606426d9bd7b5d
   React-Mapbuffer: bf56147c9775491e53122a94c423ac201417e326
-  react-native-netinfo: bdb108d340cdb41875c9ced535977cac6d2ff321
+  react-native-netinfo: 076df4f9b07f6670acf4ce9a75aac8d34c2e2ccc
   react-native-safe-area-context: 399a5859f6acbdf67f671c69b53113f535f3b5b0
   React-nativeconfig: 9f223cd321823afdecf59ed00861ab2d69ee0fc1
   React-NativeModulesApple: ff7efaff7098639db5631236cfd91d60abff04c0
@@ -1492,10 +1541,12 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 56b642bf605ba5afa500d35790928fc1d51565ad
   React-utils: 4476b7fcbbd95cfd002f3e778616155241d86e31
   ReactCommon: ecad995f26e0d1e24061f60f4e5d74782f003f12
-  RNCAsyncStorage: 10591b9e0a91eaffee14e69b3721009759235125
-  RNGoogleMobileAds: 6b6df4845568cd7c7bed5cc7ae75c472ebf37ef1
-  RNScreens: 23dad53fc9db1da2c93e647ae33fd7ce2bd49d60
-  RNVectorIcons: 50ea777efffdd991a22e968aa312d75da7ff46c3
+  RNCAsyncStorage: 826b603ae9c0f88b5ac4e956801f755109fa4d5c
+  RNGestureHandler: 2282cfbcf86c360d29f44ace393203afd5c6cff7
+  RNGoogleMobileAds: 98d579aff4a05029f4f92ca5632eb6753493911d
+  RNReanimated: 8978449b2a511388ea71faf1e66f669134e87658
+  RNScreens: b32a9ff15bea7fcdbe5dff6477bc503f792b1208
+  RNVectorIcons: 2a2f79274248390b80684ea3c4400bd374a15c90
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
   Yoga: ae3c32c514802d30f687a04a6a35b348506d411f
 

@@ -1,5 +1,5 @@
-import validator from 'validator';
-import { useToast } from '../hooks/useToast';
+import { useToast } from "../hooks";
+
 
 export const predictUrl = async (url: string, setLoading: Function, setPredictionStatus: Function, storeSwitch: boolean, setStorSwitch: Function) => {
     const showToast = useToast();

@@ -1,19 +1,18 @@
 import React, { useEffect } from 'react'
-import { resetAndGo } from '../../utils/Helpers';
 import { useNavigation } from '@react-navigation/native';
-import AppIcon from '../../components/AppIcon';
-import MainContainer from '../../components/MainContainer';
-import MainHeading from '../../components/MainHeading';
+import { AppIcon, MainContainer, MainHeading } from '../../../components';
+import { resetAndGo } from '../../../utils';
+import { STACK } from '../../../enums';
 
-export default function SplashScreen() {
+export const SplashScreen = () => {
 
     const navigation = useNavigation()
 
     useEffect(() => {
         setTimeout(() => {
-            resetAndGo(navigation, 'HomeScreen', null)
+            resetAndGo(navigation, STACK.MAIN, null);
         }, 2000);
-    }, []);
+    }, [navigation]);
 
     return (
         <MainContainer>

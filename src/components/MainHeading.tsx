@@ -1,26 +1,31 @@
-import { Text, View } from 'react-native'
-import React, { useMemo } from 'react'
-import useResponsiveDimensions from '../utils/useResponsiveDimensions';
-import { headings, primaryColor } from '../utils/StyleGuide';
+import { StyleSheet, Text, View } from 'react-native'
+import React, { useContext, useMemo } from 'react'
+import { useResponsiveDimensions } from '../hooks';
+import { AppDataContext } from '../context';
 
-export default function MainHeading({ heading }: { heading: string }) {
+interface MainHeadingProps {
+    heading: string
+}
 
+export const MainHeading = (props: MainHeadingProps) => {
+    const { heading } = props
     const { wp, hp } = useResponsiveDimensions()
+    const { appLang, appTheme } = useContext(AppDataContext);
 
     const styles = useMemo(() => {
-        return {
+        return StyleSheet.create({
             headingContainer: {
                 marginBottom: hp(16),
             },
             heading: {
-                color: primaryColor,
+                color: appTheme.primary,
                 fontSize: hp(22)
             }
-        };
-    }, [hp, wp]);
+        });
+    }, [hp, wp, appTheme]);
     return (
         <View style={styles.headingContainer}>
-            <Text style={[headings.h1, styles.heading]}>{heading}</Text>
+            <Text style={styles.heading}>{heading}</Text>
         </View>
     )
 }

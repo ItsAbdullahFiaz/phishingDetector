@@ -1,11 +1,13 @@
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native'
-import React from 'react'
-import { MainStack } from './src/navigation/Navigation'
+import React, { useContext } from 'react'
 import Toast from 'react-native-toast-message'
-import LeaderboardToast from './src/components/LeaderboardToast';
-import { secondryColor } from './src/utils/StyleGuide';
+import { RootNavigator } from './navigation';
+import { LeaderboardToast } from './components';
+import { AppDataContext } from './context';
 
 export default function App() {
+  const { appTheme } = useContext(AppDataContext);
+
   const toastConfig = {
     successToast: ({ text1, text2 }: { text1: string, text2: string }) => (
       <LeaderboardToast text1={text1} text2={text2} type="successLeaderboard" />
@@ -21,8 +23,8 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle='dark-content' backgroundColor={secondryColor} />
-      <MainStack />
+      <StatusBar barStyle={appTheme.primary == '#1b2c3d' ? 'dark-content' : 'light-content'} backgroundColor={appTheme.secondary} />
+      <RootNavigator />
       <Toast config={toastConfig} />
     </SafeAreaView>
   )

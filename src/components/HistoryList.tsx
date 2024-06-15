@@ -1,12 +1,20 @@
-import { FlatList, Text, TouchableOpacity, View, ViewStyle } from 'react-native'
-import React, { useMemo } from 'react'
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, { useContext, useMemo } from 'react'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Colors, headings, primaryColor, primaryLight, secondryColor } from '../utils/StyleGuide';
-import useResponsiveDimensions from '../utils/useResponsiveDimensions';
+import { OTHER_TEXT_STYLE, OTHER_COLORS, GREYSCALE_COLORS } from '../enums';
+import { useResponsiveDimensions } from '../hooks';
+import { AppDataContext } from '../context';
 
-export default function HistoryList({ storedUrls, setStoredUrls }: any) {
+interface HistoryListProps {
+    storedUrls: any,
+    setStoredUrls: any
+}
+
+export const HistoryList = (props: HistoryListProps) => {
+    const { storedUrls, setStoredUrls } = props
     const { wp, hp } = useResponsiveDimensions();
+    const { appLang, appTheme } = useContext(AppDataContext);
 
     const deleteUrl = async (itemUrl: string) => {
         const updatedUrls = storedUrls.filter((item: { url: string, status: boolean }) => item.url !== itemUrl);
@@ -16,62 +24,67 @@ export default function HistoryList({ storedUrls, setStoredUrls }: any) {
 
     const renderItem = ({ item }: { item: { url: string, status: boolean } }) => (
         <View style={styles.listItem}>
-            <Text numberOfLines={1} style={[headings.h2, styles.urlText]}>{item.url}</Text>
-            <Text style={[headings.h3, { color: item.status ? Colors.green : Colors.red }]}>
+            <Text numberOfLines={1} style={styles.urlText}>{item.url}</Text>
+            <Text style={[styles.status, { color: item.status ? OTHER_COLORS.green : OTHER_COLORS.red }]}>
                 {item.status ? 'Safe' : 'Phishing'}
             </Text>
             <TouchableOpacity onPress={() => deleteUrl(item.url)}>
-                <Icon name="delete" size={22} color={Colors.red} />
+                <Icon name="delete" size={22} color={OTHER_COLORS.red} />
             </TouchableOpacity>
         </View>
     );
 
     const emptyComponent = () => (
         <View style={styles.emptyContainer}>
-            <Icon style={styles.emptyIcon} name='history' size={40} color={primaryColor} />
-            <Text style={[headings.h4, styles.emptyText]}>No history available</Text>
+            <Icon style={styles.emptyIcon} name='history' size={40} color={appTheme.primary} />
+            <Text style={styles.emptyText}>No history available</Text>
         </View>
     )
 
     const styles = useMemo(() => {
-        return {
+        return StyleSheet.create({
             historyContainer: {
                 flex: 1,
                 marginTop: hp(26),
-                backgroundColor: primaryLight,
+                backgroundColor: appTheme.primaryLight,
                 borderRadius: 8,
                 borderWidth: 1,
-                borderColor: Colors.transparent,
-                width: '100%' as ViewStyle['width']
+                borderColor: OTHER_COLORS.tansparentPrimary,
+                width: '100%'
             },
             listItem: {
-                flexDirection: 'row' as ViewStyle['flexDirection'],
-                justifyContent: 'space-between' as ViewStyle['justifyContent'],
-                alignItems: 'center' as ViewStyle['alignItems'],
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
                 paddingVertical: hp(12),
                 paddingHorizontal: wp(16),
                 borderBottomWidth: 1,
-                borderColor: Colors.lightgrey,
+                borderColor: GREYSCALE_COLORS.grey300,
             },
             urlText: {
+                ...OTHER_TEXT_STYLE.caption,
                 fontSize: hp(16),
-                color: Colors.dark,
-                width: "60%" as ViewStyle['width']
+                color: appTheme.textColor,
+                width: "60%"
             },
             emptyContainer: {
-                alignItems: 'center' as ViewStyle['alignItems'],
+                alignItems: 'center',
+            },
+            status: {
+                ...OTHER_TEXT_STYLE.caption,
             },
             emptyIcon: {
                 marginTop: hp(50)
             },
             emptyText: {
+                ...OTHER_TEXT_STYLE.caption,
                 fontSize: hp(16),
-                color: primaryColor,
+                color: appTheme.primary,
             },
             deleteButton: {
-                color: Colors.red
+                color: OTHER_COLORS.red
             }
-        };
+        });
     }, [hp, wp, setStoredUrls]);
 
     return (

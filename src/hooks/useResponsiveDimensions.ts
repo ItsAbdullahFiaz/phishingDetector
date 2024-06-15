@@ -8,7 +8,7 @@ import {
 const WIDTH_IN_FIGMA_DESIGN = 414;
 const HEIGHT_IN_FIGMA_DESIGN = 896;
 
-const useResponsiveDimensions = () => {
+export const useResponsiveDimensions = () => {
   const [screenWidth, setScreenWidth] = useState(
     Dimensions.get('window').width
   );
@@ -51,6 +51,4 @@ const useResponsiveDimensions = () => {
 
   return { wp, hp };
 };
-
-export default useResponsiveDimensions;
 

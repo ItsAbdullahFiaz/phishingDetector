@@ -1,22 +1,28 @@
-import { StyleSheet, View, ViewStyle } from 'react-native'
-import React, { useMemo } from 'react'
-import useResponsiveDimensions from '../utils/useResponsiveDimensions';
-import { secondryColor } from '../utils/StyleGuide';
+import { StyleSheet, View } from 'react-native'
+import React, { useContext, useMemo } from 'react'
+import { useResponsiveDimensions } from '../hooks';
+import { AppDataContext } from '../context';
 
-export default function MainContainer({ children }: { children: React.ReactNode }) {
+interface MainContainerProps {
+    children: React.ReactNode
+}
+
+export const MainContainer = (props: MainContainerProps) => {
+    const { children } = props
     const { wp, hp } = useResponsiveDimensions();
+    const { appLang, appTheme } = useContext(AppDataContext);
 
     const styles = useMemo(() => {
-        return {
+        return StyleSheet.create({
             container: {
                 flex: 1,
-                backgroundColor: secondryColor,
-                justifyContent: 'center' as ViewStyle['justifyContent'],
-                alignItems: 'center' as ViewStyle['alignItems'],
+                backgroundColor: appTheme.secondary,
+                justifyContent: 'center',
+                alignItems: 'center',
                 padding: hp(16),
             },
-        };
-    }, [hp, wp]);
+        });
+    }, [hp, wp, appTheme]);
 
     return (
         <View style={styles.container}>
@@ -24,5 +30,3 @@ export default function MainContainer({ children }: { children: React.ReactNode 
         </View>
     )
 }
-
-const styles = StyleSheet.create({})

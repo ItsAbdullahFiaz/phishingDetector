@@ -1,7 +1,7 @@
 import { CommonActions } from "@react-navigation/native";
 
-export const resetAndGo = (navigation: any, routeName: string, routeParams: any) => {
-    if (navigation && !IsEmptyString(routeName)) {
+const resetAndGo = (navigation: any, routeName: string, routeParams: any) => {
+    if (navigation && !isEmptyString(routeName)) {
         navigation.dispatch(
             CommonActions.reset({
                 index: 0,
@@ -16,6 +16,8 @@ export const resetAndGo = (navigation: any, routeName: string, routeParams: any)
     }
 };
 
-export const IsEmptyString = (str: string) => {
+const isEmptyString = (str: string) => {
     return str == '' || !str;
 };
+
+export { resetAndGo, isEmptyString }

@@ -1,21 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Share } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { predictUrl } from '../../services/Predict';
-import HistoryList from '../../components/HistoryList';
-import CustomInput from '../../components/CustomInput';
-import MainButton from '../../components/MainButton';
-import MainHeading from '../../components/MainHeading';
-import MainContainer from '../../components/MainContainer';
-import AppIcon from '../../components/AppIcon';
-import BannerAds from '../../components/BannerAds';
 import validator from 'validator';
-import useNetworkStatus from '../../hooks/useNetworkStatus';
-import IconButton from '../../components/IconButton';
-import { useInterstitialAds } from '../../hooks/useInterstitialAd';
-import { useToast } from '../../hooks/useToast';
+import { useInterstitialAds, useNetworkStatus, useToast } from '../../../hooks';
+import { predictUrl } from '../../../services';
+import { AppIcon, BannerAds, CustomInput, HistoryList, IconButton, MainButton, MainContainer, MainHeading } from '../../../components';
 
-const App = () => {
+export const HomeScreen = () => {
     const [url, setUrl] = useState('');
     const [predictionStatus, setPredictionStatus] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -121,5 +112,3 @@ const App = () => {
         </MainContainer>
     );
 };
-
-export default App;
