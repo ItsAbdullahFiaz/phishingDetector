@@ -1,0 +1,17 @@
+{
+    "greeting": "Ciao!",
+    "close": "Chiudi",
+    "enter_url": "Inserisci URL",
+    "predict": "Prevedi",
+    "dark_mode": "Modalità scura",
+    "change_lang": "Cambia lingua",
+    "no_history": "Nessun cronologia disponibile",
+    "phishing": "Phishing",
+    "safe": "Sicuro",
+    "invalid_url": "URL non valido",
+    "no_internet": "Nessuna connessione internet!",
+    "check_connection": "Controlla la connessione e riprova",
+    "phishing_url": "Questa è un URL di phishing potenziale",
+    "safe_url": "Questo URL è sicuro",
+    "error_request": "Si è verificato un errore durante la richiesta"
+}  

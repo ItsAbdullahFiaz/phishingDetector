@@ -1,8 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
-import React, { useContext, useMemo } from "react";
+import React, { useMemo } from "react";
 import { useResponsiveDimensions } from "../hooks";
-import { OTHER_COLORS } from "../enums";
-import { AppDataContext } from "../context";
+import { GREYSCALE_COLORS, OTHER_COLORS } from "../enums";
 
 interface LeaderboardToastProps {
     text1: string,
@@ -13,7 +12,6 @@ interface LeaderboardToastProps {
 export const LeaderboardToast = (props: LeaderboardToastProps) => {
     const { text1, text2, type } = props
     const { hp, wp } = useResponsiveDimensions();
-    const { appLang, appTheme } = useContext(AppDataContext);
 
     const styles = useMemo(() => {
         return StyleSheet.create({
@@ -27,13 +25,13 @@ export const LeaderboardToast = (props: LeaderboardToastProps) => {
             },
             toast_text: {
                 fontSize: hp(14),
-                color: appTheme.secondary,
+                color: GREYSCALE_COLORS.grey50,
                 fontFamily: "Poppins-Medium",
                 paddingLeft: hp(16),
             },
             toast_textTwo: {
                 fontSize: hp(13),
-                color: appTheme.secondary,
+                color: GREYSCALE_COLORS.grey50,
                 fontFamily: "Poppins",
                 paddingLeft: hp(16),
                 paddingTop: hp(9),

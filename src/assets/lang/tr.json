@@ -1,0 +1,17 @@
+{
+    "greeting": "Merhaba!",
+    "close": "Kapat",
+    "enter_url": "URL girin",
+    "predict": "Tahmin et",
+    "dark_mode": "Karanlık Mod",
+    "change_lang": "Dili Değiştir",
+    "no_history": "Mevcut geçmiş yok",
+    "phishing": "Phishing",
+    "safe": "Güvenli",
+    "invalid_url": "Geçersiz URL",
+    "no_internet": "İnternet bağlantısı yok!",
+    "check_connection": "Bağlantınızı kontrol edin ve tekrar deneyin",
+    "phishing_url": "Bu potansiyel bir phishing URL'sidir",
+    "safe_url": "Bu URL güvenlidir",
+    "error_request": "İstek yapılırken bir hata oluştu"
+}

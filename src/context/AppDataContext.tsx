@@ -1,17 +1,9 @@
 import React, { useState, createContext, useEffect, useMemo } from 'react';
 import { theme } from '../enums';
-import { LANGS } from '../assets/lang';
+import { langTranslations } from '../assets/lang';
+import { getStoredStringValue, storeStringValue } from '../utils';
 
-// local available app translations...
-const langTranslations = [
-  {
-    key: 'English',
-    value: 'en',
-    data: LANGS.en,
-  },
-];
-
-const DEFAULT_LANG = langTranslations[0].value;
+const DEFAULT_LANG = langTranslations[4].value;
 const LIGHT_THEME_MODE = '1';
 const DARK_THEME_MODE = '2';
 
@@ -39,10 +31,14 @@ const defaultAppDataContext: AppDataContextType = {
 const AppDataContext = createContext<AppDataContextType>(defaultAppDataContext);
 const AppDataProvider = ({ children }: { children: React.ReactNode }) => {
   const [appTheme, setAppTheme] = useState({});
-  const [activeThemeMode, setActiveThemeMode] = useState(DARK_THEME_MODE);
+  const [activeThemeMode, setActiveThemeMode] = useState(LIGHT_THEME_MODE);
 
   const [activeLang, setActiveLang] = useState(DEFAULT_LANG);
   const [appLang, setAppLang] = useState({});
+
+  useEffect(() => {
+    getStoredStringValue('@ThemeState', setActiveThemeMode, LIGHT_THEME_MODE)
+  }, [])
 
   useEffect(() => {
     if (activeThemeMode === DARK_THEME_MODE) {
@@ -50,11 +46,17 @@ const AppDataProvider = ({ children }: { children: React.ReactNode }) => {
     } else {
       setAppTheme(theme.light);
     }
+    storeStringValue('@ThemeState', activeThemeMode)
   }, [activeThemeMode]);
+
+  useEffect(() => {
+    getStoredStringValue('@LangState', setActiveLang, DEFAULT_LANG)
+  }, [])
 
   useEffect(() => {
     const mLangData = langTranslations.find(i => i.value === activeLang);
     setAppLang(mLangData?.data);
+    storeStringValue('@LangState', activeLang)
   }, [activeLang]);
 
   const contextValue = useMemo(

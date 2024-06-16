@@ -1,10 +1,10 @@
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useContext, useMemo } from 'react'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { OTHER_TEXT_STYLE, OTHER_COLORS, GREYSCALE_COLORS } from '../enums';
 import { useResponsiveDimensions } from '../hooks';
 import { AppDataContext } from '../context';
+import { AnyIcon, IconType } from '.';
 
 interface HistoryListProps {
     storedUrls: any,
@@ -13,6 +13,7 @@ interface HistoryListProps {
 
 export const HistoryList = (props: HistoryListProps) => {
     const { storedUrls, setStoredUrls } = props
+    const storedUrlslength = storedUrls.length
     const { wp, hp } = useResponsiveDimensions();
     const { appLang, appTheme } = useContext(AppDataContext);
 
@@ -22,31 +23,42 @@ export const HistoryList = (props: HistoryListProps) => {
         setStoredUrls(updatedUrls);
     };
 
-    const renderItem = ({ item }: { item: { url: string, status: boolean } }) => (
-        <View style={styles.listItem}>
+    const renderItem = ({ item, index }: { item: { url: string, status: boolean }, index: number }) => (
+        <View style={[{ borderBottomWidth: storedUrlslength - 1 == index ? 0 : hp(0.5) }, styles.listItem]}>
             <Text numberOfLines={1} style={styles.urlText}>{item.url}</Text>
-            <Text style={[styles.status, { color: item.status ? OTHER_COLORS.green : OTHER_COLORS.red }]}>
-                {item.status ? 'Safe' : 'Phishing'}
+            <Text style={[styles.status, { color: item.status ? OTHER_COLORS.green : appTheme.error }]}>
+                {item.status ? appLang.safe : appLang.phishing}
             </Text>
             <TouchableOpacity onPress={() => deleteUrl(item.url)}>
-                <Icon name="delete" size={22} color={OTHER_COLORS.red} />
+                <AnyIcon
+                    type={IconType.Octicons}
+                    name='diff-removed'
+                    size={hp(16)}
+                    color={GREYSCALE_COLORS.grey600}
+                />
             </TouchableOpacity>
         </View>
     );
 
     const emptyComponent = () => (
         <View style={styles.emptyContainer}>
-            <Icon style={styles.emptyIcon} name='history' size={40} color={appTheme.primary} />
-            <Text style={styles.emptyText}>No history available</Text>
+            <AnyIcon
+                type={IconType.MaterialCommunityIcons}
+                name='history'
+                size={hp(40)}
+                color={appTheme.primary}
+            />
+            <Text style={styles.emptyText}>{appLang.no_history}</Text>
         </View>
     )
 
     const styles = useMemo(() => {
         return StyleSheet.create({
             historyContainer: {
-                flex: 1,
+                // flex: 1,
+                height: hp(400),
                 marginTop: hp(26),
-                backgroundColor: appTheme.primaryLight,
+                backgroundColor: storedUrlslength !== 0 ? appTheme.primaryLight : appTheme.secondary,
                 borderRadius: 8,
                 borderWidth: 1,
                 borderColor: OTHER_COLORS.tansparentPrimary,
@@ -58,7 +70,6 @@ export const HistoryList = (props: HistoryListProps) => {
                 alignItems: 'center',
                 paddingVertical: hp(12),
                 paddingHorizontal: wp(16),
-                borderBottomWidth: 1,
                 borderColor: GREYSCALE_COLORS.grey300,
             },
             urlText: {
@@ -67,11 +78,17 @@ export const HistoryList = (props: HistoryListProps) => {
                 color: appTheme.textColor,
                 width: "60%"
             },
+            emptyView: {
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center'
+            },
             emptyContainer: {
                 alignItems: 'center',
             },
             status: {
                 ...OTHER_TEXT_STYLE.caption,
+                fontSize: hp(14)
             },
             emptyIcon: {
                 marginTop: hp(50)
@@ -85,11 +102,12 @@ export const HistoryList = (props: HistoryListProps) => {
                 color: OTHER_COLORS.red
             }
         });
-    }, [hp, wp, setStoredUrls]);
+    }, [hp, wp, storedUrls, appTheme]);
 
     return (
         <View style={styles.historyContainer}>
             <FlatList
+                contentContainerStyle={storedUrlslength === 0 ? styles.emptyView : null}
                 data={storedUrls}
                 renderItem={renderItem}
                 showsVerticalScrollIndicator={false}

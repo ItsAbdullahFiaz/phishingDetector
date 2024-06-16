@@ -4,11 +4,12 @@ import { useResponsiveDimensions } from '../hooks';
 import { AppDataContext } from '../context';
 
 interface MainContainerProps {
-    children: React.ReactNode
+    children: React.ReactNode,
+    disableJustifyContent: boolean
 }
 
 export const MainContainer = (props: MainContainerProps) => {
-    const { children } = props
+    const { children, disableJustifyContent } = props
     const { wp, hp } = useResponsiveDimensions();
     const { appLang, appTheme } = useContext(AppDataContext);
 
@@ -17,7 +18,7 @@ export const MainContainer = (props: MainContainerProps) => {
             container: {
                 flex: 1,
                 backgroundColor: appTheme.secondary,
-                justifyContent: 'center',
+                justifyContent: disableJustifyContent ? 'flex-start' : 'center',
                 alignItems: 'center',
                 padding: hp(16),
             },

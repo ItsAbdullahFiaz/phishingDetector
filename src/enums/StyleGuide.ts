@@ -101,7 +101,7 @@ enum FONT {
 enum PRIMARY_COLORS_LIGHT {
     primary = '#1b2c3d',
     secondary = '#dde6f0',
-    textColor = '#070A0E',
+    textColor = '#1b2c3d',
     background = '#e4fff7',
     secondaryBackground = '#a3aab1',
     placeholderText = '#8F9193',
@@ -113,7 +113,7 @@ enum PRIMARY_COLORS_LIGHT {
 enum PRIMARY_COLORS_DARK {
     primary = '#dde6f0',
     secondary = '#1b2c3d',
-    textColor = '#FFFFFF',
+    textColor = '#F5F5F5',
     background = '#181A20',
     secondaryBackground = '#76808a',
     placeholderText = '#8F9193',
@@ -125,7 +125,7 @@ enum SECONDARY_COLORS_LIGHT {
     success = '#1BAC4B',
     info = '#246BFD',
     warning = '#246BFD',
-    error = '#F75555',
+    error = '#D0342C',
     disabled = '#D8D8D8',
     background2 = '#F4F4F4',
     background3 = '#E8F7ED',
@@ -138,7 +138,7 @@ enum SECONDARY_COLORS_DARK {
     success = '#1BAC4B',
     info = '#246BFD',
     warning = '#246BFD',
-    error = '#F75555',
+    error = '#FF6347',
     disabled = '#1F222A',
     background2 = '#1F222A',
     background3 = '#35383F',
@@ -163,7 +163,7 @@ enum GREYSCALE_COLORS {
 enum OTHER_COLORS {
     white = '#FFFFFF',
     black = '#000000',
-    red = '#C64A47',
+    red = '#D0342C',
     green = '#339966',
     pink = '#EA1E61',
     purple = '#9D28AC',
@@ -270,6 +270,12 @@ const OTHER_TEXT_STYLE = {
     },
 };
 
+const SIZES = {
+    // App Dimensions
+    width,
+    height,
+};
+
 const theme = {
     dark: { ...PRIMARY_COLORS_DARK, ...SECONDARY_COLORS_DARK },
     light: { ...PRIMARY_COLORS_LIGHT, ...SECONDARY_COLORS_LIGHT },
@@ -286,4 +292,5 @@ export {
     FONT_SIZE,
     HIT_SLOP,
     STATUS_COLORS,
+    SIZES
 };

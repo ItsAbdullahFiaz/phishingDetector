@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { Share } from 'react-native';
+import React, { useContext, useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import validator from 'validator';
 import { useInterstitialAds, useNetworkStatus, useToast } from '../../../hooks';
 import { predictUrl } from '../../../services';
-import { AppIcon, BannerAds, CustomInput, HistoryList, IconButton, MainButton, MainContainer, MainHeading } from '../../../components';
+import { AppIcon, BannerAds, CustomInput, Header, HistoryList, MainButton, MainContainer, MainHeading } from '../../../components';
+import { AppDataContext } from '../../../context';
 
 export const HomeScreen = () => {
+    const { appLang } = useContext(AppDataContext);
     const [url, setUrl] = useState('');
     const [predictionStatus, setPredictionStatus] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -16,6 +17,7 @@ export const HomeScreen = () => {
     const { showInterstitialAd, adEnded, setAdEnded } = useInterstitialAds();
     const showToast = useToast();
     const networkStatus = useNetworkStatus();
+    const responseErrorList = { phishing_url: appLang.phishing_url, safe_url: appLang.safe_url, error_request: appLang.error_request }
 
     useEffect(() => {
         loadStoredUrls();
@@ -47,7 +49,7 @@ export const HomeScreen = () => {
     };
 
     const handlePredict = async () => {
-        await predictUrl(url, setLoading, setPredictionStatus, storeSwitch, setStoreSwitch);
+        await predictUrl(url, setLoading, setPredictionStatus, storeSwitch, setStoreSwitch, responseErrorList);
     };
 
     const storeUrlStatus = async () => {
@@ -60,7 +62,6 @@ export const HomeScreen = () => {
                 await AsyncStorage.setItem('urlHistory', JSON.stringify(updatedUrls));
                 setStoredUrls(updatedUrls);
                 setUrl('')
-                console.log(updatedUrls);
             }
         } catch (error) {
             console.error('Error storing URL status:', error);
@@ -71,9 +72,9 @@ export const HomeScreen = () => {
         const isValid = validator.isURL(url);
 
         if (!isValid) {
-            showToast('Invalid URL', 'errorToast', url);
+            showToast(appLang.invalid_url, 'errorToast', url);
         } else if (!networkStatus) {
-            showToast('No internet connection!', 'errorToast', 'Check your connection and try again');
+            showToast(appLang.no_internet, 'errorToast', appLang.check_connection);
         } else if (adCounter === 0 || adCounter % 3 === 0) {
             showInterstitialAd();
         } else {
@@ -82,28 +83,22 @@ export const HomeScreen = () => {
         }
     };
 
-    const handleShare = () => {
-        Share.share({
-            message: `Protect yourself from online scams with the "Phishing Detector" app! It helps detect phishing attempts in emails, messages, and websites. Download now from Play Store: https://play.google.com/store/apps/details?id=com.phishingdetector&pli=1`
-        });
-    };
-
     return (
-        <MainContainer>
-            <IconButton icon='share-social-sharp' onPress={handleShare} />
+        <MainContainer disableJustifyContent={true} >
+            <Header />
             <AppIcon />
             <MainHeading heading='Phishing Detector' />
             <CustomInput
                 value={url}
                 setValue={setUrl}
-                placeholder='Enter URL'
-                secureTextEntry={false}
+                placeholder={appLang.enter_url}
                 textWrong=''
                 bottomError={false}
+                pasteButton={true}
             />
             <MainButton
                 onPress={handleOnPress}
-                buttonText='Predict'
+                buttonText={appLang.predict}
                 disableBtn={url.length < 4}
                 isLoading={loading}
             />
