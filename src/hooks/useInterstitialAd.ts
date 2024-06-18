@@ -6,7 +6,7 @@ const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
     keywords: ['sportswear', 'fitness', 'athleisure', 'basketball', 'football', 'baseball', 'soccer', 'tennis', 'running', 'yoga', 'workout'],
 });
 
-export function useInterstitialAds() {
+export const useInterstitialAds = () => {
     const [adEnded, setAdEnded] = useState(false)
     useEffect(() => {
         const onEnd = () => {
@@ -19,7 +19,7 @@ export function useInterstitialAds() {
             setAdEnded(true);
         };
 
-        const unsubscribeLoaded = interstitial.addAdEventListener(AdEventType.LOADED, () => {});
+        const unsubscribeLoaded = interstitial.addAdEventListener(AdEventType.LOADED, () => { });
         const unsubscribeClosed = interstitial.addAdEventListener(AdEventType.CLOSED, onEnd);
         const unsubscribeError = interstitial.addAdEventListener(AdEventType.ERROR, onError);
 

@@ -1,7 +1,7 @@
-import validator from 'validator';
-import { useToast } from '../hooks/useToast';
+import { useToast } from "../hooks";
 
-export const predictUrl = async (url: string, setLoading: Function, setPredictionStatus: Function, storeSwitch: boolean, setStorSwitch: Function) => {
+
+export const predictUrl = async (url: string, setLoading: Function, setPredictionStatus: Function, storeSwitch: boolean, setStorSwitch: Function, responseErrorList: any) => {
     const showToast = useToast();
 
     try {
@@ -20,10 +20,10 @@ export const predictUrl = async (url: string, setLoading: Function, setPredictio
 
         if (result.prediction === 'bad') {
             setPredictionStatus(false);
-            showToast('This is a potential phishing URL', 'errorToast', url)
+            showToast(responseErrorList.phishing_url, 'errorToast', url)
         } else {
             setPredictionStatus(true);
-            showToast('This URL is safe', 'successToast', url)
+            showToast(responseErrorList.safe_url, 'successToast', url)
         }
 
         const updateSwitch = !storeSwitch
@@ -31,6 +31,6 @@ export const predictUrl = async (url: string, setLoading: Function, setPredictio
 
     } catch (error) {
         setLoading(false);
-        showToast('Error occurred while making the request', 'errorToast', url)
+        showToast(responseErrorList.error_request, 'errorToast', url)
     }
 };

@@ -1,19 +1,19 @@
-import { View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React, { useMemo } from 'react'
 import { BannerAdSize, BannerAd, TestIds } from 'react-native-google-mobile-ads';
-import useResponsiveDimensions from '../utils/useResponsiveDimensions';
+import { useResponsiveDimensions } from '../hooks';
 
 const adUnitId = __DEV__ ? TestIds.BANNER : 'ca-app-pub-2994186406049200/4486141897';
 
-export default function BannerAds() {
+export const BannerAds = () => {
     const { wp, hp } = useResponsiveDimensions();
 
     const styles = useMemo(() => {
-        return {
+        return StyleSheet.create({
             adContainer: {
-                marginVertical: hp(20)
+                marginVertical: hp(8)
             },
-        };
+        });
     }, [hp, wp]);
 
     return (

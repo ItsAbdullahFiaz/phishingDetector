@@ -1,7 +1,8 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { CommonActions } from "@react-navigation/native";
 
-export const resetAndGo = (navigation: any, routeName: string, routeParams: any) => {
-    if (navigation && !IsEmptyString(routeName)) {
+const resetAndGo = (navigation: any, routeName: string, routeParams: any) => {
+    if (navigation && !isEmptyString(routeName)) {
         navigation.dispatch(
             CommonActions.reset({
                 index: 0,
@@ -16,6 +17,29 @@ export const resetAndGo = (navigation: any, routeName: string, routeParams: any)
     }
 };
 
-export const IsEmptyString = (str: string) => {
+const isEmptyString = (str: string) => {
     return str == '' || !str;
 };
+
+const storeStringValue = async (key: string, value: any) => {
+    try {
+        await AsyncStorage.setItem(key, value)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const getStoredStringValue = async (key: string, setStoredValue: any, defaultValue: any) => {
+    try {
+        const value = await AsyncStorage.getItem(key);
+        if (value !== null) {
+            setStoredValue(value)
+        } else {
+            setStoredValue(defaultValue)
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export { resetAndGo, isEmptyString, storeStringValue, getStoredStringValue }

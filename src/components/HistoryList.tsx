@@ -1,12 +1,21 @@
-import { FlatList, Text, TouchableOpacity, View, ViewStyle } from 'react-native'
-import React, { useMemo } from 'react'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, { useContext, useMemo } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Colors, headings, primaryColor, primaryLight, secondryColor } from '../utils/StyleGuide';
-import useResponsiveDimensions from '../utils/useResponsiveDimensions';
+import { OTHER_TEXT_STYLE, OTHER_COLORS, GREYSCALE_COLORS } from '../enums';
+import { useResponsiveDimensions } from '../hooks';
+import { AppDataContext } from '../context';
+import { AnyIcon, IconType } from '.';
 
-export default function HistoryList({ storedUrls, setStoredUrls }: any) {
+interface HistoryListProps {
+    storedUrls: any,
+    setStoredUrls: any
+}
+
+export const HistoryList = (props: HistoryListProps) => {
+    const { storedUrls, setStoredUrls } = props
+    const storedUrlslength = storedUrls.length
     const { wp, hp } = useResponsiveDimensions();
+    const { appLang, appTheme } = useContext(AppDataContext);
 
     const deleteUrl = async (itemUrl: string) => {
         const updatedUrls = storedUrls.filter((item: { url: string, status: boolean }) => item.url !== itemUrl);
@@ -14,69 +23,91 @@ export default function HistoryList({ storedUrls, setStoredUrls }: any) {
         setStoredUrls(updatedUrls);
     };
 
-    const renderItem = ({ item }: { item: { url: string, status: boolean } }) => (
-        <View style={styles.listItem}>
-            <Text numberOfLines={1} style={[headings.h2, styles.urlText]}>{item.url}</Text>
-            <Text style={[headings.h3, { color: item.status ? Colors.green : Colors.red }]}>
-                {item.status ? 'Safe' : 'Phishing'}
+    const renderItem = ({ item, index }: { item: { url: string, status: boolean }, index: number }) => (
+        <View style={[{ borderBottomWidth: storedUrlslength - 1 == index ? 0 : hp(0.5) }, styles.listItem]}>
+            <Text numberOfLines={1} style={styles.urlText}>{item.url}</Text>
+            <Text style={[styles.status, { color: item.status ? OTHER_COLORS.green : appTheme.error }]}>
+                {item.status ? appLang.safe : appLang.phishing}
             </Text>
             <TouchableOpacity onPress={() => deleteUrl(item.url)}>
-                <Icon name="delete" size={22} color={Colors.red} />
+                <AnyIcon
+                    type={IconType.Octicons}
+                    name='diff-removed'
+                    size={hp(16)}
+                    color={GREYSCALE_COLORS.grey600}
+                />
             </TouchableOpacity>
         </View>
     );
 
     const emptyComponent = () => (
         <View style={styles.emptyContainer}>
-            <Icon style={styles.emptyIcon} name='history' size={40} color={primaryColor} />
-            <Text style={[headings.h4, styles.emptyText]}>No history available</Text>
+            <AnyIcon
+                type={IconType.MaterialCommunityIcons}
+                name='history'
+                size={hp(40)}
+                color={appTheme.primary}
+            />
+            <Text style={styles.emptyText}>{appLang.no_history}</Text>
         </View>
     )
 
     const styles = useMemo(() => {
-        return {
+        return StyleSheet.create({
             historyContainer: {
-                flex: 1,
-                marginTop: hp(50),
-                backgroundColor: primaryLight,
+                // flex: 1,
+                height: hp(400),
+                marginTop: hp(26),
+                backgroundColor: storedUrlslength !== 0 ? appTheme.primaryLight : appTheme.secondary,
                 borderRadius: 8,
                 borderWidth: 1,
-                borderColor: Colors.transparent,
-                width: '100%' as ViewStyle['width']
+                borderColor: OTHER_COLORS.tansparentPrimary,
+                width: '100%'
             },
             listItem: {
-                flexDirection: 'row' as ViewStyle['flexDirection'],
-                justifyContent: 'space-between' as ViewStyle['justifyContent'],
-                alignItems: 'center' as ViewStyle['alignItems'],
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
                 paddingVertical: hp(12),
                 paddingHorizontal: wp(16),
-                borderBottomWidth: 1,
-                borderColor: Colors.lightgrey,
+                borderColor: GREYSCALE_COLORS.grey300,
             },
             urlText: {
+                ...OTHER_TEXT_STYLE.caption,
                 fontSize: hp(16),
-                color: Colors.dark,
-                width: "60%" as ViewStyle['width']
+                color: appTheme.textColor,
+                width: "60%"
+            },
+            emptyView: {
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center'
             },
             emptyContainer: {
-                alignItems: 'center' as ViewStyle['alignItems'],
+                alignItems: 'center',
+            },
+            status: {
+                ...OTHER_TEXT_STYLE.caption,
+                fontSize: hp(14)
             },
             emptyIcon: {
                 marginTop: hp(50)
             },
             emptyText: {
+                ...OTHER_TEXT_STYLE.caption,
                 fontSize: hp(16),
-                color: primaryColor,
+                color: appTheme.primary,
             },
             deleteButton: {
-                color: Colors.red
+                color: OTHER_COLORS.red
             }
-        };
-    }, [hp, wp, setStoredUrls]);
+        });
+    }, [hp, wp, storedUrls, appTheme]);
 
     return (
         <View style={styles.historyContainer}>
             <FlatList
+                contentContainerStyle={storedUrlslength === 0 ? styles.emptyView : null}
                 data={storedUrls}
                 renderItem={renderItem}
                 showsVerticalScrollIndicator={false}

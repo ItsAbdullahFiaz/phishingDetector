@@ -8,6 +8,7 @@ export const useToast = () => {
       text2: desc,
       visibilityTime: 3000,
       autoHide: true,
+      topOffset: 22
       // position: 'bottom'
     });
   };
