@@ -1,3 +1,4 @@
+import { Platform } from "react-native";
 import Toast from "react-native-toast-message";
 
 export const useToast = () => {
@@ -8,7 +9,7 @@ export const useToast = () => {
       text2: desc,
       visibilityTime: 3000,
       autoHide: true,
-      topOffset: 22
+      topOffset: Platform.OS === 'android' ? 22 : 60
       // position: 'bottom'
     });
   };

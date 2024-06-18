@@ -1,9 +1,13 @@
-import { StyleSheet, View } from 'react-native'
+import { Platform, StyleSheet, View } from 'react-native'
 import React, { useMemo } from 'react'
 import { BannerAdSize, BannerAd, TestIds } from 'react-native-google-mobile-ads';
 import { useResponsiveDimensions } from '../hooks';
 
-const adUnitId = __DEV__ ? TestIds.BANNER : 'ca-app-pub-2994186406049200/4486141897';
+const adUnitId = __DEV__
+    ? TestIds.BANNER
+    : Platform.OS === 'ios'
+        ? 'ca-app-pub-2994186406049200/7514289559'
+        : 'ca-app-pub-2994186406049200/4486141897';
 
 export const BannerAds = () => {
     const { wp, hp } = useResponsiveDimensions();

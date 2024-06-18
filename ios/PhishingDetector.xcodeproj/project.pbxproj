@@ -8,19 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* PhishingDetectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PhishingDetectorTests.m */; };
-		01B2032EF29B4DBD8A5F6EA5 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9904815C9EB74F45BDA1F161 /* Poppins-Bold.ttf */; };
-		0A0654C3829C4BA593C166E7 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3F6C5F57EC4F4C9195104E /* Poppins-Regular.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-PhishingDetector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-PhishingDetector.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		397376C8E6F54DC2991B918B /* Poppins.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BC777B6BB9C4EBC85AB05D7 /* Poppins.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-PhishingDetector-PhishingDetectorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-PhishingDetector-PhishingDetectorTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		83F02AA55E524AA0B2BBC269 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB623DEEE914C079DD67879 /* Poppins-SemiBold.ttf */; };
-		842D96E08DB04096BF70AA34 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64E96791920941999F2C5594 /* Poppins-Light.ttf */; };
 		9C170A0E1AAAB02BBB0D41B4 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D5E1393C46733EBD0591C778 /* PrivacyInfo.xcprivacy */; };
-		E0748EF5BD92446CAFB83683 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E650221AB5704660A6B67DBA /* Poppins-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,19 +39,38 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PhishingDetector/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = RnDiffApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-PhishingDetector-PhishingDetectorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhishingDetector-PhishingDetectorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30BF641D2C1F98B9002876CE /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
+		30BF641E2C1F98B9002876CE /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
+		30BF641F2C1F98B9002876CE /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
+		30BF64202C1F98B9002876CE /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
+		30BF64212C1F98B9002876CE /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		30BF64222C1F98B9002876CE /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
+		30BF64232C1F98B9002876CE /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
+		30BF64242C1F98B9002876CE /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
+		30BF64252C1F98B9002876CE /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
+		30BF64262C1F98B9002876CE /* FontAwesome6_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Regular.ttf; sourceTree = "<group>"; };
+		30BF64272C1F98B9002876CE /* FontAwesome6_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Solid.ttf; sourceTree = "<group>"; };
+		30BF64282C1F98B9002876CE /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
+		30BF64292C1F98B9002876CE /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
+		30BF642A2C1F98B9002876CE /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
+		30BF642B2C1F98B9002876CE /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
+		30BF642C2C1F98B9002876CE /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		30BF642D2C1F98B9002876CE /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
+		30BF642E2C1F98B9002876CE /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
+		30BF642F2C1F98B9002876CE /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-PhishingDetector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhishingDetector.debug.xcconfig"; path = "Target Support Files/Pods-PhishingDetector/Pods-PhishingDetector.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-PhishingDetector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhishingDetector.release.xcconfig"; path = "Target Support Files/Pods-PhishingDetector/Pods-PhishingDetector.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-PhishingDetector-PhishingDetectorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhishingDetector-PhishingDetectorTests.debug.xcconfig"; path = "Target Support Files/Pods-PhishingDetector-PhishingDetectorTests/Pods-PhishingDetector-PhishingDetectorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-PhishingDetector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhishingDetector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		64E96791920941999F2C5594 /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../src/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
-		6BC777B6BB9C4EBC85AB05D7 /* Poppins.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Poppins.ttf; path = ../src/assets/fonts/Poppins.ttf; sourceTree = "<group>"; };
-		7C3F6C5F57EC4F4C9195104E /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		64E96791920941999F2C5594 /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../src/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
+		6BC777B6BB9C4EBC85AB05D7 /* Poppins.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Poppins.ttf; path = ../src/assets/fonts/Poppins.ttf; sourceTree = "<group>"; };
+		7C3F6C5F57EC4F4C9195104E /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PhishingDetector/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-PhishingDetector-PhishingDetectorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhishingDetector-PhishingDetectorTests.release.xcconfig"; path = "Target Support Files/Pods-PhishingDetector-PhishingDetectorTests/Pods-PhishingDetector-PhishingDetectorTests.release.xcconfig"; sourceTree = "<group>"; };
-		9904815C9EB74F45BDA1F161 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
-		ACB623DEEE914C079DD67879 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
-		D5E1393C46733EBD0591C778 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = PhishingDetector/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		E650221AB5704660A6B67DBA /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		9904815C9EB74F45BDA1F161 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		ACB623DEEE914C079DD67879 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		D5E1393C46733EBD0591C778 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = PhishingDetector/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		E650221AB5704660A6B67DBA /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -101,6 +114,7 @@
 		13B07FAE1A68108700A75B9A /* PhishingDetector */ = {
 			isa = PBXGroup;
 			children = (
+				30BF64302C1F98B9002876CE /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -124,7 +138,6 @@
 				6BC777B6BB9C4EBC85AB05D7 /* Poppins.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -135,6 +148,33 @@
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-PhishingDetector-PhishingDetectorTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30BF64302C1F98B9002876CE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				30BF641D2C1F98B9002876CE /* AntDesign.ttf */,
+				30BF641E2C1F98B9002876CE /* Entypo.ttf */,
+				30BF641F2C1F98B9002876CE /* EvilIcons.ttf */,
+				30BF64202C1F98B9002876CE /* Feather.ttf */,
+				30BF64212C1F98B9002876CE /* FontAwesome.ttf */,
+				30BF64222C1F98B9002876CE /* FontAwesome5_Brands.ttf */,
+				30BF64232C1F98B9002876CE /* FontAwesome5_Regular.ttf */,
+				30BF64242C1F98B9002876CE /* FontAwesome5_Solid.ttf */,
+				30BF64252C1F98B9002876CE /* FontAwesome6_Brands.ttf */,
+				30BF64262C1F98B9002876CE /* FontAwesome6_Regular.ttf */,
+				30BF64272C1F98B9002876CE /* FontAwesome6_Solid.ttf */,
+				30BF64282C1F98B9002876CE /* Fontisto.ttf */,
+				30BF64292C1F98B9002876CE /* Foundation.ttf */,
+				30BF642A2C1F98B9002876CE /* Ionicons.ttf */,
+				30BF642B2C1F98B9002876CE /* MaterialCommunityIcons.ttf */,
+				30BF642C2C1F98B9002876CE /* MaterialIcons.ttf */,
+				30BF642D2C1F98B9002876CE /* Octicons.ttf */,
+				30BF642E2C1F98B9002876CE /* SimpleLineIcons.ttf */,
+				30BF642F2C1F98B9002876CE /* Zocial.ttf */,
+			);
+			name = Fonts;
+			path = "../node_modules/react-native-vector-icons/Fonts";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -276,12 +316,6 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				01B2032EF29B4DBD8A5F6EA5 /* Poppins-Bold.ttf in Resources */,
-				842D96E08DB04096BF70AA34 /* Poppins-Light.ttf in Resources */,
-				E0748EF5BD92446CAFB83683 /* Poppins-Medium.ttf in Resources */,
-				0A0654C3829C4BA593C166E7 /* Poppins-Regular.ttf in Resources */,
-				83F02AA55E524AA0B2BBC269 /* Poppins-SemiBold.ttf in Resources */,
-				397376C8E6F54DC2991B918B /* Poppins.ttf in Resources */,
 				9C170A0E1AAAB02BBB0D41B4 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,7 +552,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = PhishingDetector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -531,8 +568,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.phishingdetector;
 				PRODUCT_NAME = PhishingDetector;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -545,7 +583,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PhishingDetector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -557,8 +598,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.phishingdetector;
 				PRODUCT_NAME = PhishingDetector;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -638,10 +680,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -714,10 +753,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

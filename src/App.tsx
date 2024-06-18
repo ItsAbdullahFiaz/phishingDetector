@@ -1,12 +1,23 @@
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native'
-import React, { useContext } from 'react'
+import React, { useContext, useMemo } from 'react'
 import Toast from 'react-native-toast-message'
 import { RootNavigator } from './navigation';
 import { LeaderboardToast } from './components';
 import { AppDataContext } from './context';
+import { useResponsiveDimensions } from './hooks';
 
 export default function App() {
   const { appTheme } = useContext(AppDataContext);
+  const { wp, hp } = useResponsiveDimensions();
+
+  const styles = useMemo(() => {
+    return StyleSheet.create({
+      container: {
+        flex: 1,
+        backgroundColor: appTheme.secondary
+      },
+    });
+  }, [hp, wp, appTheme]);
 
   const toastConfig = {
     successToast: ({ text1, text2 }: { text1: string, text2: string }) => (
@@ -29,9 +40,3 @@ export default function App() {
     </SafeAreaView>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-})

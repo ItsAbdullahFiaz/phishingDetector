@@ -7,7 +7,7 @@ export const predictUrl = async (url: string, setLoading: Function, setPredictio
     try {
         setLoading(true);
 
-        const response = await fetch('http://abdullahfiaz.pythonanywhere.com/predict', {
+        const response = await fetch('https://abdullahfiaz.pythonanywhere.com/predict', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -31,6 +31,7 @@ export const predictUrl = async (url: string, setLoading: Function, setPredictio
 
     } catch (error) {
         setLoading(false);
+        console.log(error)
         showToast(responseErrorList.error_request, 'errorToast', url)
     }
 };

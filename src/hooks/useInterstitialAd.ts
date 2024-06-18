@@ -1,7 +1,14 @@
 import { useEffect, useState } from 'react';
+import { Platform } from 'react-native';
 import { InterstitialAd, AdEventType, TestIds } from 'react-native-google-mobile-ads';
 
-const adUnitId = __DEV__ ? TestIds.INTERSTITIAL : 'ca-app-pub-2994186406049200/7148798409';
+const adUnitId = __DEV__
+    ? TestIds.INTERSTITIAL
+    : Platform.OS === 'ios'
+        ? 'ca-app-pub-2994186406049200/1798928449'
+        : 'ca-app-pub-2994186406049200/7148798409'
+
+
 const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
     keywords: ['sportswear', 'fitness', 'athleisure', 'basketball', 'football', 'baseball', 'soccer', 'tennis', 'running', 'yoga', 'workout'],
 });
