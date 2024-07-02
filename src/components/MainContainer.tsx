@@ -5,7 +5,7 @@ import { AppDataContext } from '../context';
 
 interface MainContainerProps {
     children: React.ReactNode,
-    disableJustifyContent: boolean
+    disableJustifyContent?: boolean
 }
 
 export const MainContainer = (props: MainContainerProps) => {

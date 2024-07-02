@@ -1,15 +1,17 @@
 import { StyleSheet, Switch, View, FlatList, Text } from 'react-native'
 import React, { useContext, useMemo, useState } from 'react'
 import { DrawerContentComponentProps } from '@react-navigation/drawer'
+import { useNavigation } from '@react-navigation/native'
 import { AnyIcon, AppIcon, ButtonRow, CustomModal, IconType } from '.'
 import { AppDataContext, DARK_THEME_MODE, LIGHT_THEME_MODE } from '../context'
 import { useResponsiveDimensions } from '../hooks'
-import { OTHER_TEXT_STYLE, SIZES } from '../enums'
+import { OTHER_TEXT_STYLE, SCREENS, SIZES } from '../enums'
 
 export const CustomDrawer: React.FC<DrawerContentComponentProps> = (props) => {
     const { appLang, appTheme, setActiveThemeMode, activeThemeMode, setActiveLang, activeLang, langTranslations } = useContext(AppDataContext);
     const { wp, hp } = useResponsiveDimensions();
     const [modalVisible, setModalVisible] = useState(false);
+    const navigation = useNavigation()
 
     const switchTheme = () => {
         if (activeThemeMode === DARK_THEME_MODE) {
@@ -65,6 +67,21 @@ export const CustomDrawer: React.FC<DrawerContentComponentProps> = (props) => {
             <AppIcon />
             <Text style={styles.greeting}>{appLang.greeting}</Text>
             <View style={styles.innerContainer}>
+
+                <ButtonRow
+                    onPress={() => navigation.navigate(SCREENS.HOME as never)}
+                    contentRight={
+                        <AnyIcon
+                            type={IconType.AntDesign}
+                            name='home'
+                            size={hp(24)}
+                            color={appTheme.primary}
+                        />
+                    }
+                    contentRightStyle={styles.languageRow}
+                    title={'Home'}
+                />
+
                 <ButtonRow
                     onPress={switchTheme}
                     contentRight={
@@ -87,12 +104,40 @@ export const CustomDrawer: React.FC<DrawerContentComponentProps> = (props) => {
                         <AnyIcon
                             type={IconType.Ionicons}
                             name='language-outline'
-                            size={hp(20)}
+                            size={hp(24)}
                             color={appTheme.primary}
                         />
                     }
                     contentRightStyle={styles.languageRow}
                     title={appLang.change_lang}
+                />
+
+                <ButtonRow
+                    onPress={() => navigation.navigate(SCREENS.PRIVACY_POLICY as never)}
+                    contentRight={
+                        <AnyIcon
+                            type={IconType.Ionicons}
+                            name='shield-half'
+                            size={hp(24)}
+                            color={appTheme.primary}
+                        />
+                    }
+                    contentRightStyle={styles.languageRow}
+                    title={'Privacy Policy'}
+                />
+
+                <ButtonRow
+                    onPress={() => navigation.navigate(SCREENS.TERMS as never)}
+                    contentRight={
+                        <AnyIcon
+                            type={IconType.Ionicons}
+                            name='document-text-outline'
+                            size={hp(24)}
+                            color={appTheme.primary}
+                        />
+                    }
+                    contentRightStyle={styles.languageRow}
+                    title={'Terms and Conditions'}
                     hideBorder={true}
                 />
 
