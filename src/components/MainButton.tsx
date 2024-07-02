@@ -40,11 +40,7 @@ export const MainButton = (props: MainButtonProps) => {
                 marginHorizontal: wp(8),
                 flexGrow: 0,
                 flexShrink: 0,
-            },
-            activityIndicator: {
-                flexGrow: 0,
-                flexShrink: 0,
-            },
+            }
         });
     }, [hp, wp, isLoading, disableBtn, appTheme]);
 

@@ -87,6 +87,7 @@ enum FONT {
     PoppinsRegular = 'Poppins',
     PoppinsMedium = 'Poppins-Medium',
     PoppinsBold = 'Poppins-Bold',
+    PoppinsExtraBold = 'Poppins-ExtraBold',
 }
 
 // // const primaryColor = '#232D3F'
@@ -261,7 +262,7 @@ const OTHER_TEXT_STYLE = {
         // fontSize: moderateScale(12),
     },
     large_title: {
-        fontFamily: FONT.PoppinsBold,
+        fontFamily: FONT.PoppinsExtraBold,
         // fontSize: moderateScale(32),
     },
     bottom_tab_text: {

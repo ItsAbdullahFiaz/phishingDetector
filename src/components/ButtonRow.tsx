@@ -43,7 +43,7 @@ export const ButtonRow = (props: ButtonRowProps) => {
       },
       titleRow: {
         ...OTHER_TEXT_STYLE.caption,
-        fontSize: hp(14),
+        fontSize: hp(15),
         color: appTheme.textColor,
       },
       contentRight: {

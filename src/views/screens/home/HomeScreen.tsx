@@ -30,7 +30,7 @@ export const HomeScreen = () => {
     }, [storeSwitch]);
 
     useEffect(() => {
-        if (adEnded) {
+        if (adEnded && url) {
             setAdCounter(prevCounter => prevCounter + 1);
             handlePredict();
             setAdEnded(false);
@@ -72,7 +72,7 @@ export const HomeScreen = () => {
         const isValid = validator.isURL(url);
 
         if (!isValid) {
-            showToast(appLang.invalid_url, 'errorToast', url);
+            showToast(appLang.invalid_url, 'errorToast', url.length > 40 ? url.substring(0, 40) + '...' : url);
         } else if (!networkStatus) {
             showToast(appLang.no_internet, 'errorToast', appLang.check_connection);
         } else if (adCounter === 0 || adCounter % 3 === 0) {
