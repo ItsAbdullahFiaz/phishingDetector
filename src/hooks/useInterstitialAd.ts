@@ -23,7 +23,7 @@ export const useInterstitialAds = () => {
 
         const onError = (error: any) => {
             console.error('Error loading interstitial ad:', error);
-            setAdEnded(true);
+            // setAdEnded(true);
         };
 
         const unsubscribeLoaded = interstitial.addAdEventListener(AdEventType.LOADED, () => { });
