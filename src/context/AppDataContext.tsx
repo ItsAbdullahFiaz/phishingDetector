@@ -1,9 +1,11 @@
 import React, { useState, createContext, useEffect, useMemo } from 'react';
+import { Appearance } from 'react-native';
 import { theme } from '../enums';
 import { langTranslations } from '../assets/lang';
 import { getStoredStringValue, storeStringValue } from '../utils';
 
 const DEFAULT_LANG = langTranslations[4].value;
+const AUTO_THEME_MODE = '0'
 const LIGHT_THEME_MODE = '1';
 const DARK_THEME_MODE = '2';
 
@@ -31,22 +33,36 @@ const defaultAppDataContext: AppDataContextType = {
 const AppDataContext = createContext<AppDataContextType>(defaultAppDataContext);
 const AppDataProvider = ({ children }: { children: React.ReactNode }) => {
   const [appTheme, setAppTheme] = useState({});
-  const [activeThemeMode, setActiveThemeMode] = useState(LIGHT_THEME_MODE);
+  const [activeThemeMode, setActiveThemeMode] = useState(AUTO_THEME_MODE);
 
   const [activeLang, setActiveLang] = useState(DEFAULT_LANG);
   const [appLang, setAppLang] = useState({});
 
   useEffect(() => {
-    getStoredStringValue('@ThemeState', setActiveThemeMode, LIGHT_THEME_MODE)
+    getStoredStringValue('@ThemeState', setActiveThemeMode, AUTO_THEME_MODE)
   }, [])
 
   useEffect(() => {
-    if (activeThemeMode === DARK_THEME_MODE) {
+    if (activeThemeMode === AUTO_THEME_MODE) {
+      const colorScheme = Appearance.getColorScheme()
+      if (colorScheme === 'dark') {
+        setAppTheme(theme.dark);
+      } else {
+        setAppTheme(theme.light);
+      }
+      const subscribe = Appearance.addChangeListener(({ colorScheme }) => {
+        if (colorScheme === 'dark') {
+          setAppTheme(theme.dark);
+        } else {
+          setAppTheme(theme.light);
+        }
+      })
+      return () => subscribe.remove()
+    } else if (activeThemeMode === DARK_THEME_MODE) {
       setAppTheme(theme.dark);
     } else {
       setAppTheme(theme.light);
     }
-    storeStringValue('@ThemeState', activeThemeMode)
   }, [activeThemeMode]);
 
   useEffect(() => {
@@ -87,4 +103,4 @@ const AppDataProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export { LIGHT_THEME_MODE, DARK_THEME_MODE, AppDataContext, AppDataProvider };
+export { AUTO_THEME_MODE, LIGHT_THEME_MODE, DARK_THEME_MODE, AppDataContext, AppDataProvider };

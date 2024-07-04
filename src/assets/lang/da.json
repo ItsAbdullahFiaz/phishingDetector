@@ -13,5 +13,12 @@
     "check_connection": "Kontroller din forbindelse og prøv igen",
     "phishing_url": "Dette er en potentiel phishing-URL",
     "safe_url": "Denne URL er sikker",
-    "error_request": "Der opstod en fejl under forespørgslen"
+    "error_request": "Der opstod en fejl under forespørgslen",
+    "home": "Hjem",
+    "theme_mode": "Tematilstand",
+    "privacy_policy": "Privatlivspolitik",
+    "terms_conditions": "Vilkår og Betingelser",
+    "auto": "Automatisk",
+    "dark": "Mørk",
+    "light": "Lys"
 }  

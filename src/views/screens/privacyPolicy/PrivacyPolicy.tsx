@@ -39,27 +39,27 @@ export const PrivacyPolicy = () => {
             <ScrollView>
                 <Text style={styles.heading}>Privacy Policy</Text>
                 <Text style={styles.text}>
-                    We value your privacy and are committed to protecting your personal data. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data.
+                    We value your privacy and are committed to protecting it. This Privacy Policy explains our practices and your rights regarding your data.
                 </Text>
                 <Text style={styles.subheading}>1. Information We Collect</Text>
                 <Text style={styles.text}>
-                    We may collect URLs you submit for analysis, usage data, and device information.
+                    We do not collect any personal data from our users. We may collect URLs you submit for analysis.
                 </Text>
                 <Text style={styles.subheading}>2. How We Use Your Data</Text>
                 <Text style={styles.text}>
-                    We use the data to provide predictions, improve our machine learning model, and enhance user experience.
+                    We use the URLs you submit to provide predictions and improve our machine learning model. No personal data is collected or used.
                 </Text>
                 <Text style={styles.subheading}>3. Data Sharing</Text>
                 <Text style={styles.text}>
-                    We do not share your data with third parties except for service providers who assist us in operating the app.
+                    We do not share any personal data with third parties. The URLs you submit are used solely for the purposes mentioned above.
                 </Text>
                 <Text style={styles.subheading}>4. Your Rights</Text>
                 <Text style={styles.text}>
-                    You have the right to access, correct, or delete your data. Contact us at [contact information] to exercise these rights.
+                    As we do not collect personal data, there is no personal data for you to access, correct, or delete.
                 </Text>
                 <Text style={styles.subheading}>5. Data Security</Text>
                 <Text style={styles.text}>
-                    We implement appropriate security measures to protect your data from unauthorized access.
+                    We implement appropriate security measures to protect the URLs you submit from unauthorized access.
                 </Text>
             </ScrollView>
         </MainContainer>

@@ -13,5 +13,12 @@
     "check_connection": "Tarkista yhteys ja yritä uudelleen",
     "phishing_url": "Tämä on mahdollinen kalastelu-URL",
     "safe_url": "Tämä URL on turvallinen",
-    "error_request": "Virhe tapahtui pyynnön käsittelyssä"
+    "error_request": "Virhe tapahtui pyynnön käsittelyssä",
+    "home": "Koti",
+    "theme_mode": "Teematila",
+    "privacy_policy": "Tietosuojakäytäntö",
+    "terms_conditions": "Ehdot",
+    "auto": "Automaattinen",
+    "dark": "Tumma",
+    "light": "Vaalea"
 }  

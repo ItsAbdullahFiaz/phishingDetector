@@ -1,24 +1,23 @@
-import { StyleSheet, Switch, View, FlatList, Text } from 'react-native'
+import { StyleSheet, View, FlatList, Text } from 'react-native'
 import React, { useContext, useMemo, useState } from 'react'
 import { DrawerContentComponentProps } from '@react-navigation/drawer'
 import { useNavigation } from '@react-navigation/native'
 import { AnyIcon, AppIcon, ButtonRow, CustomModal, IconType } from '.'
-import { AppDataContext, DARK_THEME_MODE, LIGHT_THEME_MODE } from '../context'
+import { AUTO_THEME_MODE, AppDataContext, DARK_THEME_MODE, LIGHT_THEME_MODE } from '../context'
 import { useResponsiveDimensions } from '../hooks'
 import { OTHER_TEXT_STYLE, SCREENS, SIZES } from '../enums'
+import { storeStringValue } from '../utils'
 
 export const CustomDrawer: React.FC<DrawerContentComponentProps> = (props) => {
     const { appLang, appTheme, setActiveThemeMode, activeThemeMode, setActiveLang, activeLang, langTranslations } = useContext(AppDataContext);
     const { wp, hp } = useResponsiveDimensions();
-    const [modalVisible, setModalVisible] = useState(false);
+    const [langModalVisible, setLangModalVisible] = useState(false);
+    const [themeModalVisible, setThemeModalVisible] = useState(false)
     const navigation = useNavigation()
 
-    const switchTheme = () => {
-        if (activeThemeMode === DARK_THEME_MODE) {
-            setActiveThemeMode(LIGHT_THEME_MODE);
-        } else {
-            setActiveThemeMode(DARK_THEME_MODE);
-        }
+    const switchTheme = (themeMode: string) => {
+        setActiveThemeMode(themeMode);
+        storeStringValue('@ThemeState', themeMode)
     }
 
     const switchLanguage = (lang: string) => {
@@ -56,8 +55,11 @@ export const CustomDrawer: React.FC<DrawerContentComponentProps> = (props) => {
             languageRow: {
                 paddingHorizontal: hp(6)
             },
-            customModalContainer: {
+            langCustomModalContainer: {
                 height: SIZES.height - hp(330)
+            },
+            themeCustomModalContainer: {
+                height: SIZES.height - hp(700)
             }
         });
     }, [wp, hp, appTheme]);
@@ -79,27 +81,25 @@ export const CustomDrawer: React.FC<DrawerContentComponentProps> = (props) => {
                         />
                     }
                     contentRightStyle={styles.languageRow}
-                    title={'Home'}
+                    title={appLang.home}
                 />
 
                 <ButtonRow
-                    onPress={switchTheme}
+                    onPress={() => setThemeModalVisible(true)}
                     contentRight={
-                        <Switch
-                            trackColor={{
-                                false: appTheme.secondary,
-                                true: appTheme.secondary,
-                            }}
-                            thumbColor={appTheme.primary}
-                            onValueChange={switchTheme}
-                            value={activeThemeMode === DARK_THEME_MODE}
+                        <AnyIcon
+                            type={IconType.Ionicons}
+                            name='invert-mode'
+                            size={hp(24)}
+                            color={appTheme.primary}
                         />
                     }
-                    title={appLang.dark_mode}
+                    contentRightStyle={styles.languageRow}
+                    title={appLang.theme_mode}
                 />
 
                 <ButtonRow
-                    onPress={() => setModalVisible(true)}
+                    onPress={() => setLangModalVisible(true)}
                     contentRight={
                         <AnyIcon
                             type={IconType.Ionicons}
@@ -123,7 +123,7 @@ export const CustomDrawer: React.FC<DrawerContentComponentProps> = (props) => {
                         />
                     }
                     contentRightStyle={styles.languageRow}
-                    title={'Privacy Policy'}
+                    title={appLang.privacy_policy}
                 />
 
                 <ButtonRow
@@ -137,20 +137,49 @@ export const CustomDrawer: React.FC<DrawerContentComponentProps> = (props) => {
                         />
                     }
                     contentRightStyle={styles.languageRow}
-                    title={'Terms and Conditions'}
+                    title={appLang.terms_conditions}
                     hideBorder={true}
                 />
 
                 <CustomModal
-                    visible={modalVisible}
-                    onClose={() => setModalVisible(false)}
+                    visible={langModalVisible}
+                    onClose={() => setLangModalVisible(false)}
                     title={appLang.change_lang}
                 >
-                    <View style={styles.customModalContainer}>
+                    <View style={styles.langCustomModalContainer}>
                         <FlatList
                             data={langTranslations}
                             renderItem={renderItem}
                             showsVerticalScrollIndicator={false}
+                        />
+                    </View>
+                </CustomModal>
+
+                <CustomModal
+                    visible={themeModalVisible}
+                    onClose={() => setThemeModalVisible(false)}
+                    title={appLang.theme_mode}
+                >
+                    <View style={styles.themeCustomModalContainer}>
+                        <ButtonRow
+                            onPress={() => switchTheme(AUTO_THEME_MODE)}
+                            title={appLang.auto}
+                            bgStyle={{ backgroundColor: activeThemeMode == AUTO_THEME_MODE ? appTheme.primary : appTheme.primaryLight }}
+                            titleStyle={{ color: activeThemeMode == AUTO_THEME_MODE ? appTheme.secondary : appTheme.textColor }}
+                        />
+
+                        <ButtonRow
+                            onPress={() => switchTheme(LIGHT_THEME_MODE)}
+                            title={appLang.light}
+                            bgStyle={{ backgroundColor: activeThemeMode == LIGHT_THEME_MODE ? appTheme.primary : appTheme.primaryLight }}
+                            titleStyle={{ color: activeThemeMode == LIGHT_THEME_MODE ? appTheme.secondary : appTheme.textColor }}
+                        />
+
+                        <ButtonRow
+                            onPress={() => switchTheme(DARK_THEME_MODE)}
+                            title={appLang.dark}
+                            bgStyle={{ backgroundColor: activeThemeMode == DARK_THEME_MODE ? appTheme.primary : appTheme.primaryLight }}
+                            titleStyle={{ color: activeThemeMode == DARK_THEME_MODE ? appTheme.secondary : appTheme.textColor }}
                         />
                     </View>
                 </CustomModal>

@@ -13,5 +13,12 @@
   "check_connection": "Check your connection and try again",
   "phishing_url": "This is a potential phishing URL",
   "safe_url": "This URL is safe",
-  "error_request": "Error occurred while making the request"
+  "error_request": "Error occurred while making the request",
+  "home": "Home",
+  "theme_mode": "Theme Mode",
+  "privacy_policy": "Privacy Policy",
+  "terms_conditions": "Terms and Conditions",
+  "auto": "Auto",
+  "dark": "Dark",
+  "light": "Light"
 }

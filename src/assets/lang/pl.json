@@ -13,5 +13,12 @@
     "check_connection": "Sprawdź swoje połączenie i spróbuj ponownie",
     "phishing_url": "To jest potencjalny adres URL phishingowy",
     "safe_url": "Ten adres URL jest bezpieczny",
-    "error_request": "Wystąpił błąd podczas wysyłania żądania"
+    "error_request": "Wystąpił błąd podczas wysyłania żądania",
+    "home": "Strona Główna",
+    "theme_mode": "Tryb Tematyczny",
+    "privacy_policy": "Polityka Prywatności",
+    "terms_conditions": "Warunki i Zasady",
+    "auto": "Auto",
+    "dark": "Ciemny",
+    "light": "Jasny"
 }  

@@ -13,5 +13,12 @@
     "check_connection": "Verifique su conexión e inténtelo nuevamente",
     "phishing_url": "Esta es una URL potencial de phishing",
     "safe_url": "Esta URL es segura",
-    "error_request": "Se produjo un error al realizar la solicitud"
+    "error_request": "Se produjo un error al realizar la solicitud",
+    "home": "Inicio",
+    "theme_mode": "Modo de Tema",
+    "privacy_policy": "Política de Privacidad",
+    "terms_conditions": "Términos y Condiciones",
+    "auto": "Automático",
+    "dark": "Oscuro",
+    "light": "Claro"
 }  

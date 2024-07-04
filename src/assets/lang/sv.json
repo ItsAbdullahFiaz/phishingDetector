@@ -13,5 +13,12 @@
     "check_connection": "Kontrollera din anslutning och försök igen",
     "phishing_url": "Detta är en potentiell phishing-URL",
     "safe_url": "Denna URL är säker",
-    "error_request": "Ett fel uppstod vid begäran"
+    "error_request": "Ett fel uppstod vid begäran",
+    "home": "Hem",
+    "theme_mode": "Temaläge",
+    "privacy_policy": "Integritetspolicy",
+    "terms_conditions": "Villkor",
+    "auto": "Auto",
+    "dark": "Mörk",
+    "light": "Ljus"
 }  

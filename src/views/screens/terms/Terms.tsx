@@ -49,15 +49,15 @@ export const Terms = () => {
                 <Text style={styles.text}>
                     We are not liable for any damages resulting from the use of this app. The predictions provided are based on machine learning models and may not always be accurate.
                 </Text>
-                <Text style={styles.subheading}>3. Dispute Resolution</Text>
+                {/* <Text style={styles.subheading}>3. Dispute Resolution</Text>
                 <Text style={styles.text}>
                     Any disputes will be resolved through [arbitration/court] in [jurisdiction].
-                </Text>
-                <Text style={styles.subheading}>4. Modification of Terms</Text>
+                </Text> */}
+                <Text style={styles.subheading}>3. Modification of Terms</Text>
                 <Text style={styles.text}>
                     We reserve the right to modify these terms at any time. Changes will be communicated through the app or email.
                 </Text>
-                <Text style={styles.subheading}>5. Termination</Text>
+                <Text style={styles.subheading}>4. Termination</Text>
                 <Text style={styles.text}>
                     We may terminate or suspend access to the app for users who violate these terms.
                 </Text>

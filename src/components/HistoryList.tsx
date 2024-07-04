@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useContext, useMemo } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { OTHER_TEXT_STYLE, OTHER_COLORS, GREYSCALE_COLORS } from '../enums';
@@ -56,7 +56,7 @@ export const HistoryList = (props: HistoryListProps) => {
         return StyleSheet.create({
             historyContainer: {
                 // flex: 1,
-                height: hp(400),
+                height: hp(Platform.OS === 'android' ? 400 : 340),
                 marginTop: hp(26),
                 backgroundColor: storedUrlslength !== 0 ? appTheme.primaryLight : appTheme.secondary,
                 borderRadius: 8,

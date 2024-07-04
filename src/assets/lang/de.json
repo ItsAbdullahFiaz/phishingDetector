@@ -13,5 +13,12 @@
     "check_connection": "Überprüfen Sie Ihre Verbindung und versuchen Sie es erneut",
     "phishing_url": "Dies ist eine potenzielle Phishing-URL",
     "safe_url": "Diese URL ist sicher",
-    "error_request": "Es ist ein Fehler aufgetreten beim Senden der Anfrage"
+    "error_request": "Es ist ein Fehler aufgetreten beim Senden der Anfrage",
+    "home": "Startseite",
+    "theme_mode": "Themenmodus",
+    "privacy_policy": "Datenschutzrichtlinie",
+    "terms_conditions": "Geschäftsbedingungen",
+    "auto": "Automatisch",
+    "dark": "Dunkel",
+    "light": "Hell"
 }  

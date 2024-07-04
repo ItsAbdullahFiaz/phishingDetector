@@ -13,5 +13,12 @@
     "check_connection": "اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں",
     "phishing_url": "یہ ایک ممکنہ فشنگ URL ہے",
     "safe_url": "یہ URL محفوظ ہے",
-    "error_request": "درخواست میں خرابی واقع ہوئی ہے"
+    "error_request": "درخواست میں خرابی واقع ہوئی ہے",
+    "home": "ہوم",
+    "theme_mode": "تھیم موڈ",
+    "privacy_policy": "رازداری کی پالیسی",
+    "terms_conditions": "شرائط و ضوابط",
+    "auto": "خودکار",
+    "dark": "گہرا",
+    "light": "ہلکا"
     }

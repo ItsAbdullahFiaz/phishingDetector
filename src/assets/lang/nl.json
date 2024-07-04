@@ -13,5 +13,12 @@
     "check_connection": "Controleer uw verbinding en probeer opnieuw",
     "phishing_url": "Dit is een mogelijke phishing-URL",
     "safe_url": "Deze URL is veilig",
-    "error_request": "Er is een fout opgetreden bij het verwerken van het verzoek"
+    "error_request": "Er is een fout opgetreden bij het verwerken van het verzoek",
+    "home": "Home",
+    "theme_mode": "Themamodus",
+    "privacy_policy": "Privacybeleid",
+    "terms_conditions": "Algemene Voorwaarden",
+    "auto": "Auto",
+    "dark": "Donker",
+    "light": "Licht"
 }

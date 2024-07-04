@@ -13,5 +13,12 @@
     "check_connection": "Bağlantınızı kontrol edin ve tekrar deneyin",
     "phishing_url": "Bu potansiyel bir phishing URL'sidir",
     "safe_url": "Bu URL güvenlidir",
-    "error_request": "İstek yapılırken bir hata oluştu"
+    "error_request": "İstek yapılırken bir hata oluştu",
+    "home": "Ana Sayfa",
+    "theme_mode": "Tema Modu",
+    "privacy_policy": "Gizlilik Politikası",
+    "terms_conditions": "Şartlar ve Koşullar",
+    "auto": "Otomatik",
+    "dark": "Koyu",
+    "light": "Açık"
 }

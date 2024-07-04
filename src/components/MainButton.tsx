@@ -23,7 +23,7 @@ export const MainButton = (props: MainButtonProps) => {
             button: {
                 alignSelf: "center",
                 width: "100%",
-                paddingVertical: hp(12),
+                // paddingVertical: hp(12),
                 paddingHorizontal: wp(24),
                 borderRadius: hp(8),
                 backgroundColor: disableBtn || isLoading ? appTheme.secondaryBackground : dismissiveButton ? 'tansparent' : appTheme.primary,
