@@ -25,7 +25,7 @@ export const CustomInput = (props: CustomInputProps) => {
     const styles = useMemo(() => {
         return StyleSheet.create({
             container: {
-                marginBottom: bottomError ? hp(4) : hp(26)
+                marginBottom: bottomError ? hp(4) : hp(18)
             },
             inputView: {
                 flexDirection: 'row',

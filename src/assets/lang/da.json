@@ -20,5 +20,8 @@
     "terms_conditions": "Vilkår og Betingelser",
     "auto": "Automatisk",
     "dark": "Mørk",
-    "light": "Lys"
+    "light": "Lys",
+    "disclaimer_note": "Denne app bruger maskinlæring til at analysere og forudsige, om en URL er potentielt skadelig, baseret på data fra ",
+    "this_dataset": "dette datasæt",
+    "not_accurate": "Forudsigelserne er ikke 100% nøjagtige."
 }  

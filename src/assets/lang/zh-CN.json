@@ -20,5 +20,8 @@
     "terms_conditions": "条款和条件",
     "auto": "自动",
     "dark": "深色",
-    "light": "浅色"
+    "light": "浅色",
+    "disclaimer_note": "此应用程序使用机器学习来分析和预测URL是否可能有害，基于数据来自 ",
+    "this_dataset": "这个数据集",
+    "not_accurate": "预测并非100％准确。"
 }

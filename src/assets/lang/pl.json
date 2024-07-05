@@ -20,5 +20,8 @@
     "terms_conditions": "Warunki i Zasady",
     "auto": "Auto",
     "dark": "Ciemny",
-    "light": "Jasny"
+    "light": "Jasny",
+    "disclaimer_note": "Ta aplikacja używa uczenia maszynowego do analizy i przewidywania, czy URL jest potencjalnie szkodliwy, na podstawie danych z ",
+    "this_dataset": "tego zbioru danych",
+    "not_accurate": "Prognozy nie są dokładne w 100%."
 }  

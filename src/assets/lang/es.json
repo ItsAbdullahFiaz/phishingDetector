@@ -20,5 +20,8 @@
     "terms_conditions": "Términos y Condiciones",
     "auto": "Automático",
     "dark": "Oscuro",
-    "light": "Claro"
+    "light": "Claro",
+    "disclaimer_note": "Esta aplicación utiliza aprendizaje automático para analizar y predecir si una URL es potencialmente dañina, basándose en datos de ",
+    "this_dataset": "este conjunto de datos",
+    "not_accurate": "Las predicciones no son 100% precisas."
 }  

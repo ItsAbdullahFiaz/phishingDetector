@@ -20,5 +20,8 @@
     "terms_conditions": "Termes et Conditions",
     "auto": "Auto",
     "dark": "Sombre",
-    "light": "Clair"
+    "light": "Clair",
+    "disclaimer_note": "Cette application utilise l'apprentissage automatique pour analyser et prédire si une URL est potentiellement nuisible, basée sur des données de ",
+    "this_dataset": "ce jeu de données",
+    "not_accurate": "Les prédictions ne sont pas 100% exactes."
 }  

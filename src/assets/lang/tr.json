@@ -20,5 +20,8 @@
     "terms_conditions": "Şartlar ve Koşullar",
     "auto": "Otomatik",
     "dark": "Koyu",
-    "light": "Açık"
+    "light": "Açık",
+    "disclaimer_note": "Bu uygulama, bir URL'nin potansiyel olarak zararlı olup olmadığını analiz etmek ve tahmin etmek için makine öğrenimini kullanır ve verilerden yararlanır ",
+    "this_dataset": "bu veri kümesi",
+    "not_accurate": "Tahminler 100% doğru değildir."
 }

@@ -20,5 +20,8 @@
   "terms_conditions": "Terms and Conditions",
   "auto": "Auto",
   "dark": "Dark",
-  "light": "Light"
+  "light": "Light",
+  "disclaimer_note": "This app uses machine learning to analyze and predict if a URL is potentially harmful, based on data from ",
+  "this_dataset": "this dataset",
+  "not_accurate": "Predictions are not 100% accurate."
 }

@@ -56,8 +56,8 @@ export const HistoryList = (props: HistoryListProps) => {
         return StyleSheet.create({
             historyContainer: {
                 // flex: 1,
-                height: hp(Platform.OS === 'android' ? 400 : 340),
-                marginTop: hp(26),
+                height: hp(Platform.OS === 'android' ? 400 : 286),
+                marginTop: hp(18),
                 backgroundColor: storedUrlslength !== 0 ? appTheme.primaryLight : appTheme.secondary,
                 borderRadius: 8,
                 borderWidth: 1,

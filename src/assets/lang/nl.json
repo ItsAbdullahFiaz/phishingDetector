@@ -20,5 +20,8 @@
     "terms_conditions": "Algemene Voorwaarden",
     "auto": "Auto",
     "dark": "Donker",
-    "light": "Licht"
+    "light": "Licht",
+    "disclaimer_note": "Deze app gebruikt machine learning om te analyseren en te voorspellen of een URL mogelijk schadelijk is, gebaseerd op gegevens van ",
+    "this_dataset": "deze dataset",
+    "not_accurate": "Voorspellingen zijn niet 100% nauwkeurig."
 }

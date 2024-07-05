@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import validator from 'validator';
 import { useInterstitialAds, useNetworkStatus, useToast } from '../../../hooks';
 import { predictUrl } from '../../../services';
-import { AppIcon, BannerAds, CustomInput, Header, HistoryList, MainButton, MainContainer, MainHeading } from '../../../components';
+import { AppIcon, BannerAds, CustomInput, DisclaimerNote, Header, HistoryList, MainButton, MainContainer, MainHeading } from '../../../components';
 import { AppDataContext } from '../../../context';
 
 export const HomeScreen = () => {
@@ -102,6 +102,7 @@ export const HomeScreen = () => {
                 disableBtn={url.length < 4}
                 isLoading={loading}
             />
+            <DisclaimerNote />
             <HistoryList storedUrls={storedUrls} setStoredUrls={setStoredUrls} />
             <BannerAds />
         </MainContainer>

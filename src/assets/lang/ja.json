@@ -20,5 +20,8 @@
     "terms_conditions": "利用規約",
     "auto": "自動",
     "dark": "ダーク",
-    "light": "ライト"
+    "light": "ライト",
+    "disclaimer_note": "このアプリは、機械学習を使用して、URLが潜在的に有害かどうかを分析し予測します、データに基づいて ",
+    "this_dataset": "このデータセット",
+    "not_accurate": "予測は100％正確ではありません。"
 }

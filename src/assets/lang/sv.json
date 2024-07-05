@@ -20,5 +20,8 @@
     "terms_conditions": "Villkor",
     "auto": "Auto",
     "dark": "Mörk",
-    "light": "Ljus"
+    "light": "Ljus",
+    "disclaimer_note": "Denna app använder maskininlärning för att analysera och förutsäga om en URL är potentiellt skadlig, baserat på data från ",
+    "this_dataset": "denna dataset",
+    "not_accurate": "Förutsägelser är inte 100% exakta."
 }  

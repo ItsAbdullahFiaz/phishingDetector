@@ -20,5 +20,8 @@
     "terms_conditions": "條款和條件",
     "auto": "自動",
     "dark": "深色",
-    "light": "淺色"
+    "light": "淺色",
+    "disclaimer_note": "此應用程式使用機器學習來分析和預測URL是否可能有害，基於數據來自 ",
+    "this_dataset": "這個數據集",
+    "not_accurate": "預測並非100％準確。"
 }

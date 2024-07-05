@@ -20,5 +20,8 @@
     "terms_conditions": "이용 약관",
     "auto": "자동",
     "dark": "어두운",
-    "light": "밝은"
+    "light": "밝은",
+    "disclaimer_note": "이 앱은 기계 학습을 사용하여 URL이 잠재적으로 유해한지 분석하고 예측합니다, 데이터에 기반하여 ",
+    "this_dataset": "이 데이터셋",
+    "not_accurate": "예측은 100% 정확하지 않습니다."
 }

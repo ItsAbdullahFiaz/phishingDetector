@@ -20,5 +20,8 @@
     "terms_conditions": "Geschäftsbedingungen",
     "auto": "Automatisch",
     "dark": "Dunkel",
-    "light": "Hell"
+    "light": "Hell",
+    "disclaimer_note": "Diese App verwendet maschinelles Lernen, um zu analysieren und vorherzusagen, ob eine URL potenziell schädlich ist, basierend auf Daten von ",
+    "this_dataset": "diesem Datensatz",
+    "not_accurate": "Vorhersagen sind nicht 100% genau."
 }  

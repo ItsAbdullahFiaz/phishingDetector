@@ -20,5 +20,8 @@
     "terms_conditions": "Ehdot",
     "auto": "Automaattinen",
     "dark": "Tumma",
-    "light": "Vaalea"
+    "light": "Vaalea",
+    "disclaimer_note": "Tämä sovellus käyttää koneoppimista analysoidakseen ja ennustaakseen, onko URL mahdollisesti haitallinen, perustuen tietoihin ",
+    "this_dataset": "tästä tietojoukosta",
+    "not_accurate": "Ennusteet eivät ole 100% tarkkoja."
 }  

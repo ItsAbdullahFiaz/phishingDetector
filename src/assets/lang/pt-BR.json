@@ -20,5 +20,8 @@
     "terms_conditions": "Termos e Condições",
     "auto": "Automático",
     "dark": "Escuro",
-    "light": "Claro"
+    "light": "Claro",
+    "disclaimer_note": "Este aplicativo usa aprendizado de máquina para analisar e prever se um URL é potencialmente prejudicial, com base em dados de ",
+    "this_dataset": "este conjunto de dados",
+    "not_accurate": "As previsões não são 100% precisas."
 }

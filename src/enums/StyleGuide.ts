@@ -170,7 +170,7 @@ enum OTHER_COLORS {
     purple = '#9D28AC',
     deep_purple = '#673AB3',
     indigo = '#3F51B2',
-    blue = '#1A96F0',
+    blue = '#0044cc',
     light_blue = '#00A9F1',
     cyan = '#00BCD3',
     tansparentPrimary = 'rgba(51, 94, 247, 0.08)',
