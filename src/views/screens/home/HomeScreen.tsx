@@ -61,8 +61,8 @@ export const HomeScreen = () => {
                 updatedUrls.unshift({ url, status: predictionStatus });
                 await AsyncStorage.setItem('urlHistory', JSON.stringify(updatedUrls));
                 setStoredUrls(updatedUrls);
-                setUrl('')
             }
+            setUrl('')
         } catch (error) {
             console.error('Error storing URL status:', error);
         }
