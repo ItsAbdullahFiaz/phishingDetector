@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import validator from 'validator';
-import { useInterstitialAds, useNetworkStatus, useToast } from '../../../hooks';
+import { useNetworkStatus, useToast } from '../../../hooks';
 import { predictUrl } from '../../../services';
-import { AppIcon, BannerAds, CustomInput, Header, HistoryList, MainButton, MainContainer, MainHeading } from '../../../components';
+import { AppIcon, CustomInput, Header, HistoryList, MainButton, MainContainer, MainHeading } from '../../../components';
 import { AppDataContext } from '../../../context';
 
 export const HomeScreen = () => {
@@ -13,8 +13,8 @@ export const HomeScreen = () => {
     const [loading, setLoading] = useState(false);
     const [storedUrls, setStoredUrls] = useState<{ url: string, status: boolean }[]>([]);
     const [storeSwitch, setStoreSwitch] = useState(false);
-    const [adCounter, setAdCounter] = useState(0);
-    const { showInterstitialAd, adEnded, setAdEnded } = useInterstitialAds();
+    // const [adCounter, setAdCounter] = useState(0);
+    // const { showInterstitialAd, adEnded, setAdEnded } = useInterstitialAds();
     const showToast = useToast();
     const networkStatus = useNetworkStatus();
     const responseErrorList = { phishing_url: appLang.phishing_url, safe_url: appLang.safe_url, error_request: appLang.error_request }
@@ -29,13 +29,13 @@ export const HomeScreen = () => {
         }
     }, [storeSwitch]);
 
-    useEffect(() => {
-        if (adEnded && url) {
-            setAdCounter(prevCounter => prevCounter + 1);
-            handlePredict();
-            setAdEnded(false);
-        }
-    }, [adEnded]);
+    // useEffect(() => {
+    //     if (adEnded && url) {
+    //         setAdCounter(prevCounter => prevCounter + 1);
+    //         handlePredict();
+    //         setAdEnded(false);
+    //     }
+    // }, [adEnded]);
 
     const loadStoredUrls = async () => {
         try {
@@ -75,11 +75,13 @@ export const HomeScreen = () => {
             showToast(appLang.invalid_url, 'errorToast', url.length > 40 ? url.substring(0, 40) + '...' : url);
         } else if (!networkStatus) {
             showToast(appLang.no_internet, 'errorToast', appLang.check_connection);
-        } else if (adCounter === 0 || adCounter % 3 === 0) {
-            showInterstitialAd();
-        } else {
+        }
+        // else if (adCounter === 0 || adCounter % 3 === 0) {
+        //     showInterstitialAd();
+        // }
+        else {
             handlePredict();
-            setAdCounter(prevCounter => prevCounter + 1);
+            // setAdCounter(prevCounter => prevCounter + 1);
         }
     };
 
@@ -103,7 +105,7 @@ export const HomeScreen = () => {
                 isLoading={loading}
             />
             <HistoryList storedUrls={storedUrls} setStoredUrls={setStoredUrls} />
-            <BannerAds />
+            {/* <BannerAds /> */}
         </MainContainer>
     );
 };
